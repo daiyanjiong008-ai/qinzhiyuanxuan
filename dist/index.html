@@ -1,0 +1,1796 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>亲至源选供应商管理系统</title>
+  
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><iconify-icon icon="icon-park-outline:leaves"></iconify-icon></div>
+        <strong>亲至源选</strong><span>供应商管理系统</span>
+      </div>
+      <input class="quick-search" placeholder="快捷查询导航" />
+      <div class="nav-head"><span>常用功能</span><span>管理</span></div>
+      <div class="nav-section">
+        <button class="nav-main active" data-module="merchant"><iconify-icon icon="icon-park-outline:people"></iconify-icon><span>商家中心</span><iconify-icon icon="icon-park-outline:up"></iconify-icon></button>
+        <div class="subnav">
+          <button class="active" data-module="merchant">进驻状态</button>
+          <button data-module="merchant-address">地址管理</button>
+          <button data-module="merchant-profile">商家资料</button>
+          <button data-module="merchant-factory-record">验厂记录</button>
+          <button data-module="merchant-contract">合同协议</button>
+        </div>
+      </div>
+      <div class="nav-section">
+        <button class="nav-main" data-module="product"><iconify-icon icon="icon-park-outline:ad-product"></iconify-icon><span>商品中心</span><iconify-icon icon="icon-park-outline:up"></iconify-icon></button>
+        <div class="subnav">
+          <button data-module="product">试样提报</button>
+        </div>
+      </div>
+      <div class="nav-section">
+        <button class="nav-main" data-module="finance"><iconify-icon icon="icon-park-outline:finance"></iconify-icon><span>财务中心</span><iconify-icon icon="icon-park-outline:up"></iconify-icon></button>
+        <div class="subnav">
+          <button data-module="finance-assets">账户资产</button>
+          <button data-module="finance">保证金管理</button>
+          <button data-module="finance-reconcile">保证金对账</button>
+          <button data-module="finance-flow">保证金流水</button>
+        </div>
+      </div>
+      <div class="nav-section">
+        <button class="nav-main" data-module="system-role"><iconify-icon icon="icon-park-outline:setting-two"></iconify-icon><span>系统工具</span><iconify-icon icon="icon-park-outline:up"></iconify-icon></button>
+        <div class="subnav single-col">
+          <button data-module="system-role">角色管理</button>
+          <button data-module="system-account">子账户管理</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="tabs">
+          <button class="home-btn" type="button" data-module="home"><iconify-icon icon="icon-park-outline:home"></iconify-icon></button>
+          <button class="tab active" id="activeTab">首页</button>
+        </div>
+        <div class="top-actions">
+          <button class="screenshot-btn" type="button" id="copyScreenshotBtn" title="复制当前页面截图">
+            <iconify-icon icon="icon-park-outline:screenshot"></iconify-icon>
+            复制截图
+          </button>
+          <span class="msg"><iconify-icon icon="icon-park-outline:bell"></iconify-icon> 消息公告<span class="badge">32</span></span>
+          <span class="user"><span class="avatar"><iconify-icon icon="icon-park-outline:user"></iconify-icon></span>广州投放中心</span>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div class="title-row">
+          <div>
+            <h1 id="pageTitle">首页</h1>
+            <p id="pageDesc">欢迎进入亲至源选供应商管理系统，店铺已开通，可开始使用后台能力。</p>
+          </div>
+        </div>
+
+        <div class="module-page active" data-page="home">
+          <section class="section">
+            <div class="section-head"><span>首页</span></div>
+            <div class="home-dashboard">
+              <div class="home-hero">
+                <div>
+                  <span class="status-pill success">店铺已开通</span>
+                  <h2>欢迎回来，上海示例科技有限公司</h2>
+                  <p>你的供应商店铺已完成开通，可进入商品、财务、商家等模块继续维护资料、提交商品和查看保证金状态。</p>
+                  <div class="home-hero-actions">
+                    <button class="primary-btn" type="button" data-module="product">进入商品中心</button>
+                    <button class="secondary-btn" type="button" data-module="merchant">查看进驻状态</button>
+                  </div>
+                </div>
+                <div class="home-status-box">
+                  <div class="shop-success-logo">✓</div>
+                </div>
+              </div>
+              <div class="home-card-grid">
+                <div class="home-card">
+                  <h3>商品中心</h3>
+                  <p>继续处理试样提报、商品资料和后续上架申请。</p>
+                  <button class="secondary-btn" type="button" data-module="product">进入模块</button>
+                </div>
+                <div class="home-card">
+                  <h3>财务中心</h3>
+                  <p>查看保证金状态、对账记录和保证金流水。</p>
+                  <button class="secondary-btn" type="button" data-module="finance">进入模块</button>
+                </div>
+                <div class="home-card">
+                  <h3>商家中心</h3>
+                  <p>查看商家资料、验厂记录、合同协议和地址管理。</p>
+                  <button class="secondary-btn" type="button" data-module="merchant">进入模块</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="overview">
+          <div class="alert"><span><iconify-icon icon="icon-park-outline:attention"></iconify-icon> 您可以给用户发放售后补偿优惠券</span><button type="button" data-toast="发放优惠券流程已打开">发优惠券 ></button></div>
+          <div class="layout">
+            <div>
+              <section class="section">
+                <div class="section-head"><span>工单数据</span></div>
+                <div class="panel kpi-grid">
+                  <div class="kpi"><label>罚款工单金额/单数</label><strong>¥0.00/0单</strong></div>
+                  <div class="kpi"><label>售后工单数</label><strong>0单</strong></div>
+                  <div class="kpi"><label>订单开票超时工单数</label><strong>0单</strong></div>
+                  <div class="kpi"><label>客服工单数</label><strong>0单</strong></div>
+                  <div class="kpi"><label>投诉申诉工单数</label><strong>0单</strong></div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="section-head"><span>平台任务</span></div>
+                <div class="panel task-grid">
+                  <div class="task"><strong>新任务待回复：0</strong><p><span>催发货：</span><b>0</b></p><p><span>售后留言：</span><b>0</b></p></div>
+                  <div class="task"><strong>3小时内将逾期：0</strong><p><span>催发货：</span><b>0</b></p><p><span>售后留言：</span><b>0</b></p></div>
+                  <div class="task"><strong class="danger">已超24小时未回复：1</strong><p><span>催发货：</span><b>0</b></p><p><span>售后留言：</span><b>1</b></p></div>
+                  <div class="task"><strong class="danger">用户待开发票：0</strong><p><span>24小时内将逾期：</span><b>0</b></p><p><span>已驳回：</span><b>3</b></p></div>
+                  <div class="task"><strong class="warn">今日待回复会话数：0</strong></div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="section-head"><span>发货情况</span><div class="date-filter"><span>统计时间：（2026-07-02）</span><button class="active">今日</button><button>昨日</button><button>近七天</button><button>本月</button><button>上月</button></div></div>
+                <div class="panel ship-grid">
+                  <div class="ship"><label>订单数量</label><strong>0单</strong></div>
+                  <div class="ship"><label>已发货订单</label><strong>0单</strong></div>
+                  <div class="ship"><label>未发货订单</label><strong>0单</strong></div>
+                  <div class="ship"><label>准时发货订单数/占比</label><strong>0个/0%</strong></div>
+                  <div class="ship"><label>超时未发货订单数/占比</label><strong>0个/0%</strong></div>
+                  <div class="ship"><label>未发货预售商品订单数/占比</label><strong>0个/0%</strong></div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="section-head"><span>经营概览</span><div class="date-filter"><span>统计时间：（2026-07-02）</span><button class="active">今日</button><button>昨日</button><button>近七天</button><button>本月</button><button>上月</button><button>今年</button></div></div>
+                <div class="panel">
+                  <div class="operation-grid">
+                    <div class="operation"><label>成交金额</label><strong>¥ -</strong><small>较上周期环比<br />-%</small></div>
+                    <div class="operation"><label>退款金额</label><strong>¥ -</strong><small>较上周期环比<br />-%</small></div>
+                    <div class="operation"><label>成交用户数</label><strong>-人</strong><small>较上周期环比<br />-%</small></div>
+                    <div class="operation"><label>成交订单数</label><strong>-单</strong><small>较上周期环比<br />-%</small></div>
+                    <div class="operation"><label>售后订单数</label><strong>-单</strong><small>较上周期环比<br />-%</small></div>
+                    <div class="operation"><label>售后中金额</label><strong>¥ -</strong><small>较上周期环比<br />-%</small></div>
+                    <div class="operation"><label>仓储配送服务费</label><strong>¥ -</strong><small>较上周期环比<br />-%</small></div>
+                  </div>
+                  <div class="chart">
+                    <div class="chart-grid"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="chart-line"></div>
+                    <div class="chart-axis"><span>00:00</span><span>04:40</span><span>09:20</span><span>14:00</span><span>18:40</span><span>23:20</span></div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <div class="section-head"><span>商品（当前在售商品数量 15）</span><div class="date-filter"><span>统计时间：（2026-07-02）</span><button class="active">今日</button><button>昨日</button><button>近七天</button></div></div>
+                <div class="panel">
+                  <table class="table">
+                    <thead><tr><th>排名</th><th>商品名称</th><th>商品PV</th><th>商品UV</th><th>成交人数</th><th>成交金额</th><th>成交数量</th><th>UV转化率</th></tr></thead>
+                    <tbody>
+                      <tr data-detail="冷泡茶组合"><td>1</td><td>[6.21-6.22活动会] 线下甄选冷泡茶组合</td><td>0</td><td>0</td><td>0</td><td>¥0</td><td>0件</td><td>0%</td></tr>
+                      <tr data-detail="家庭清洁套装"><td>2</td><td>家庭清洁套装 3 件组</td><td>0</td><td>0</td><td>0</td><td>¥0</td><td>0件</td><td>0%</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+
+            <aside>
+              <div class="side-panel">
+                <div class="side-title"><iconify-icon class="orange" icon="icon-park-outline:bell"></iconify-icon>重要消息通知</div>
+                <div class="news"><strong>新功能发布</strong><p>亲至源选 APP 新增支付宝支付</p><p>2026-07-02 13:28:52</p></div>
+                <div class="side-stats">
+                  <div class="side-stat"><label>订单发货准时率</label><strong>100%</strong></div>
+                  <div class="side-stat"><label>订单平均售后率</label><strong>0%</strong></div>
+                  <div class="side-stat"><label>订单平均发货时长</label><strong>12.62小时</strong></div>
+                  <div class="side-stat"><label>已罚款总工单数</label><strong>6单 ></strong></div>
+                  <div class="side-stat"><label>总扣款金额</label><strong>¥317.93</strong></div>
+                  <div class="side-stat"><label>保证金余额</label><strong>¥19682.07</strong></div>
+                </div>
+              </div>
+              <div class="side-panel">
+                <div class="side-title"><iconify-icon class="red" icon="icon-park-outline:attention"></iconify-icon>预警关注</div>
+                <div class="warn-grid">
+                  <div class="warn-item"><label>待补货商品</label><strong>0件 ></strong></div>
+                  <div class="warn-item"><label>已缺货商品</label><strong class="red">2件 ></strong></div>
+                  <div class="warn-item"><label>待申诉工单</label><strong>0单 ></strong></div>
+                  <div class="warn-item"><label>超时未发货订单</label><strong>0单 ></strong></div>
+                  <div class="warn-item"><label>待举证投诉工单</label><strong>0单 ></strong></div>
+                  <div class="warn-item"><label>保证金今日扣款金额</label><strong>¥0 ></strong></div>
+                  <div class="warn-item"><label>超时未处理售后单</label><strong class="red">1单 ></strong></div>
+                  <div class="warn-item"><label>临近12小时待发货订单</label><strong>0单 ></strong></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="module-page" data-page="product">
+          <section class="section">
+            <div class="section-head"><span>试样提报</span></div>
+            <div class="panel sample-table-wrap">
+              <div style="padding:0 14px 14px">
+                <div class="filter-tabs">
+                  <button class="active" type="button" data-sample-tab="all">全部</button>
+                  <button type="button" data-sample-tab="pending">提报中</button>
+                  <button type="button" data-sample-tab="passed">已通过</button>
+                </div>
+                <div class="filter-form">
+                  <label>商品名称：</label>
+                  <input class="field-input" placeholder="请输入" />
+                  <label>试样状态：</label>
+                  <select class="field-select"><option>请选择</option><option>待提交</option><option>待处理</option><option>待寄样</option><option>测评中</option><option>上新已通过</option><option>上新不通过</option></select>
+                  <label>试样寄回：</label>
+                  <select class="field-select"><option>请选择</option><option>寄回</option><option>不寄回</option></select>
+                  <button class="primary-btn" type="button" data-toast="已搜索">搜索</button>
+                  <button class="secondary-btn" type="button" data-toast="已重置筛选">重置</button>
+                </div>
+                <div class="toolbar-row">
+                  <button class="primary-btn" type="button" id="newSampleBtn">新增试样提报</button>
+                  <div style="display:flex;gap:10px">
+                    <button class="secondary-btn" type="button" id="toggleSampleDataBtn">切换有数据状态</button>
+                    <button class="secondary-btn" type="button" data-toast="暂无可导出的试样记录">导出</button>
+                  </div>
+                </div>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>商品信息</th>
+                    <th>属性规格</th>
+                    <th>历史销售额</th>
+                    <th>价格信息</th>
+                    <th>主要销售渠道</th>
+                    <th>试样寄回</th>
+                    <th>状态</th>
+                    <th>来源</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="sampleTableBody"></tbody>
+              </table>
+              <div class="empty-state" id="sampleEmptyState">
+                <div>
+                  <div class="empty-illustration"></div>
+                  <strong>暂无数据</strong>
+                </div>
+              </div>
+              <div class="toolbar-row" style="padding:10px 14px;border-top:1px solid var(--line-soft);justify-content:flex-end">
+                <span style="color:var(--muted);font-size:12px" id="samplePageCount">共 0 条</span>
+                <button class="secondary-btn" type="button">1</button>
+                <select class="field-select" style="width:92px"><option>20 条/页</option><option>50 条/页</option></select>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="finance">
+          <div id="depositManageList">
+            <div class="deposit-summary-row">
+              <div class="deposit-summary-card"><div><strong>¥19,682.07</strong><small>保证金账户余额</small></div></div>
+              <div class="deposit-summary-card"><div><strong class="danger-num">¥0.00</strong><small>待缴金额</small></div></div>
+            </div>
+            <section class="section">
+              <div class="panel">
+                <div class="filter-tabs">
+                  <button class="active" type="button">全部</button>
+                  <button type="button">待缴纳</button>
+                  <button type="button">待补缴</button>
+                  <button type="button">待入账</button>
+                  <button type="button">已缴纳</button>
+                  <button type="button">已退回</button>
+                </div>
+                <div class="deposit-filter-row">
+                  <label>更新时间：</label>
+                  <input class="field-input" placeholder="开始时间" />
+                  <span style="text-align:center;color:var(--muted)">~</span>
+                  <input class="field-input" placeholder="结束时间" />
+                  <button class="primary-btn" type="button" data-toast="已执行搜索">搜索</button>
+                  <button class="secondary-btn" type="button" data-toast="已重置筛选">重置</button>
+                </div>
+              </div>
+            </section>
+            <section class="section">
+              <div class="panel">
+                <div class="deposit-table-toolbar">
+                  <strong>保证金记录</strong>
+                  <button class="primary-btn" type="button" id="openDepositSupplementBtn">补缴保证金</button>
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>更新时间</th>
+                      <th>状态</th>
+                      <th>账户金额</th>
+                      <th>待缴金额</th>
+                      <th>凭证</th>
+                      <th>事件</th>
+                      <th>驳回原因</th>
+                      <th>操作人</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2025-12-23 22:22:22</td>
+                      <td><span class="green">已缴纳</span></td>
+                      <td>¥19,682.07</td>
+                      <td>¥0.00</td>
+                      <td><div class="deposit-voucher-thumb">转账回单</div></td>
+                      <td>平台审核通过入账</td>
+                      <td>-</td>
+                      <td>薛飞</td>
+                      <td><button class="text-btn" type="button" id="showDepositAccountDetail">查看详情</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="toolbar-row" style="padding:10px 14px;border-top:1px solid var(--line-soft);justify-content:flex-end">
+                  <span style="color:var(--muted);font-size:12px">共1条记录</span>
+                  <button class="secondary-btn" type="button">1</button>
+                  <select class="field-select" style="width:92px"><option>20 条/页</option></select>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="deposit-account-detail" id="depositAccountDetail">
+            <div class="deposit-detail-title">
+              <button class="detail-back-btn" type="button" id="backDepositList">‹</button>
+              <h1>供应商保证金账户详情</h1>
+            </div>
+            <div class="account-tabs">
+              <button class="active" type="button" data-deposit-detail-tab="info">账户信息</button>
+              <button type="button" data-deposit-detail-tab="log">账户日志</button>
+            </div>
+            <div class="account-tab-panel active" data-deposit-detail-panel="info">
+              <div class="account-info-section">
+                <div class="account-info-title">账户基础信息</div>
+                <div class="account-readonly-grid">
+                  <label>供应商名称：</label><strong>广州河葵德商贸有限公司</strong>
+                  <label>账户号：</label><strong>8988423465</strong>
+                  <label>状态：</label><strong>已缴纳</strong>
+                  <label>支付方式：</label><strong>银行转账支付</strong>
+                  <label>业务类型：</label><strong>余额不足补缴</strong>
+                  <label>待缴金额：</label><strong class="red">¥0</strong>
+                </div>
+              </div>
+              <div class="account-info-section">
+                <div class="account-info-title">收款信息</div>
+                <div class="account-readonly-grid">
+                  <label>收款人：</label><strong>广州蜂群互联网科技有限公司</strong>
+                  <label>收款账号：</label><strong>1595 5804 2800 87</strong>
+                  <label>收款开户行：</label><strong>平安银行广州越秀支行</strong>
+                  <label>回款用途：</label><strong>保证金</strong>
+                </div>
+              </div>
+              <div class="account-info-section">
+                <div class="account-info-title">缴款信息</div>
+                <div class="account-readonly-grid">
+                  <label>已缴金额：</label><strong>¥20000</strong>
+                  <label>转账凭证：</label><div class="deposit-voucher-thumb">转账回单</div>
+                  <label>操作时间：</label><strong>2025-12-23 22:22:22</strong>
+                </div>
+              </div>
+            </div>
+            <div class="account-tab-panel" data-deposit-detail-panel="log">
+              <section class="section">
+                <div class="panel">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>发生时间</th>
+                        <th>状态</th>
+                        <th>账户金额</th>
+                        <th>待缴金额</th>
+                        <th>已缴金额</th>
+                        <th>凭证</th>
+                        <th>事件</th>
+                        <th>操作人</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2025-12-23 22:22:22</td>
+                        <td>已缴纳</td>
+                        <td>20000</td>
+                        <td>0</td>
+                        <td>20000</td>
+                        <td><div class="deposit-voucher-thumb">转账回单</div></td>
+                        <td>平台审核通过入账</td>
+                        <td>薛飞</td>
+                      </tr>
+                      <tr>
+                        <td>2025-12-23 17:10:24</td>
+                        <td>待入账</td>
+                        <td>0</td>
+                        <td>20000</td>
+                        <td>0</td>
+                        <td><div class="deposit-voucher-thumb">转账回单</div></td>
+                        <td>商家提交转账凭证，入账审核中</td>
+                        <td>广州河葵德商贸有限公司</td>
+                      </tr>
+                      <tr>
+                        <td>2025-12-15 15:28:27</td>
+                        <td>待缴纳</td>
+                        <td>0</td>
+                        <td>20000</td>
+                        <td>0</td>
+                        <td>-</td>
+                        <td>待缴纳保证金</td>
+                        <td>系统</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="toolbar-row" style="padding:10px 14px;border-top:1px solid var(--line-soft);justify-content:flex-end">
+                    <button class="secondary-btn" type="button">1</button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="module-page" data-page="finance-assets">
+          <div class="alert"><span><iconify-icon icon="icon-park-outline:lock"></iconify-icon> 店铺未完成开通，账户资产暂未开放。</span><button type="button" data-toast="店铺开通后将开放账户资产能力">查看说明 ></button></div>
+          <section class="section">
+            <div class="section-head"><span>账户资产</span></div>
+            <div class="panel">
+              <div class="empty-state" style="min-height:320px"><div><div class="empty-illustration"></div><strong>暂无数据</strong></div></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="finance-reconcile">
+          <section class="section">
+            <div class="section-head"><span>保证金对账</span></div>
+            <div class="panel">
+              <div class="empty-state" style="min-height:320px"><div><div class="empty-illustration"></div><strong>暂无数据</strong></div></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="finance-flow">
+          <div class="finance-flow-list-view active" id="financeFlowListView">
+            <div class="finance-flow-balance">账户金额 <strong>¥19,682.07</strong></div>
+            <section class="section">
+              <div class="panel">
+                <div class="finance-flow-filter">
+                  <label>交易流水号：</label><input class="field-input" placeholder="请输入" />
+                  <label>供应商名称：</label><input class="field-input" value="上海示例科技有限公司" placeholder="请输入" />
+                  <label>业务单号：</label><input class="field-input" placeholder="请输入" />
+                  <label>订单号：</label><input class="field-input" placeholder="请输入" />
+                  <label>发生时间：</label>
+                  <div class="range-field"><input class="field-input" placeholder="开始时间" /><span>~</span><input class="field-input" placeholder="结束时间" /></div>
+                  <label>类型：</label><select class="field-select"><option>请选择</option><option>缴款</option><option>扣款</option><option>退款</option></select>
+                  <label>业务：</label><select class="field-select"><option>请选择</option><option>缴纳保证金</option><option>订单投诉赔付扣款</option><option>客服应赔超时</option></select>
+                  <div class="finance-flow-filter-actions"><button class="primary-btn" type="button" data-toast="已搜索保证金流水">搜索</button><button class="secondary-btn" type="button" data-toast="已重置筛选">重置</button></div>
+                </div>
+              </div>
+            </section>
+            <section class="section">
+              <div class="panel">
+                <div class="deposit-table-toolbar"><button class="secondary-btn" type="button" data-toast="保证金流水已导出">导出</button></div>
+                <div class="finance-flow-table-wrap">
+                  <table class="table finance-flow-table">
+                    <thead><tr><th>发生时间</th><th>类型</th><th>上期余额</th><th>本期增加额</th><th>本期减少额</th><th>余额</th><th>业务</th><th>操作人</th><th>业务单号</th><th>关联订单号</th><th>操作</th></tr></thead>
+                    <tbody>
+                      <tr><td>2026-06-16 11:10:24</td><td>扣款</td><td>19,741.00</td><td>0</td><td>58.93</td><td>19,682.07</td><td>已完成订单投诉赔付扣款</td><td>系统</td><td class="green">202606161110234500800267</td><td>O2512271000899655488</td><td><button class="text-btn" type="button" data-finance-flow-detail="deduct">查看详情</button></td></tr>
+                      <tr><td>2026-05-19 17:15:05</td><td>扣款</td><td>19,800.60</td><td>0</td><td>59.60</td><td>19,741.00</td><td>已完成订单投诉赔付扣款</td><td>系统</td><td class="green">202605191715052812040970</td><td>O2603151004915960504</td><td><button class="text-btn" type="button" data-finance-flow-detail="deduct">查看详情</button></td></tr>
+                      <tr><td>2026-05-16 11:47:00</td><td>扣款</td><td>19,890.00</td><td>0</td><td>89.40</td><td>19,800.60</td><td>已完成订单投诉赔付扣款</td><td>系统</td><td class="green">202605161146596780087810</td><td>O2512261048376388241</td><td><button class="text-btn" type="button" data-finance-flow-detail="deduct">查看详情</button></td></tr>
+                      <tr><td>2026-03-12 15:51:57</td><td>扣款</td><td>19,910.00</td><td>0</td><td>20.00</td><td>19,890.00</td><td>客服首次响应超时</td><td>刘凤迎</td><td class="green">CO202603120001395891794509</td><td>-</td><td><button class="text-btn" type="button" data-finance-flow-detail="service">查看详情</button></td></tr>
+                      <tr><td>2026-02-14 16:40:06</td><td>扣款</td><td>19,970.00</td><td>0</td><td>30.00</td><td>19,940.00</td><td>虚假发货-超时未揽收赔付</td><td>系统</td><td class="green">2602102006377131850</td><td>O2602081013977064521</td><td><button class="text-btn" type="button" data-finance-flow-detail="delivery">查看详情</button></td></tr>
+                      <tr><td>2026-02-14 16:40:06</td><td>扣款</td><td>19,970.00</td><td>0</td><td>30.00</td><td>19,940.00</td><td>虚假发货-超时未揽收赔付</td><td>系统</td><td class="green">2602102006377063070</td><td>O2602081013796808329</td><td><button class="text-btn" type="button" data-finance-flow-detail="delivery">查看详情</button></td></tr>
+                      <tr><td>2026-02-14 11:40:07</td><td>扣款</td><td>20,000.00</td><td>0</td><td>30.00</td><td>19,970.00</td><td>虚假发货-超时未揽收赔付</td><td>系统</td><td class="green">2602102003025325065</td><td>O2602071005960495624</td><td><button class="text-btn" type="button" data-finance-flow-detail="delivery">查看详情</button></td></tr>
+                      <tr><td>2025-12-23 22:22:22</td><td>缴款</td><td>0</td><td>20,000.00</td><td>0</td><td>20,000.00</td><td>缴纳保证金</td><td>薛飞</td><td>-</td><td>-</td><td><button class="text-btn" type="button" data-finance-flow-detail="deposit">查看详情</button></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="toolbar-row" style="padding:10px 14px;border-top:1px solid var(--line-soft);justify-content:flex-end"><span style="color:var(--muted);font-size:12px">共 8 条记录</span><button class="secondary-btn" type="button">1</button><select class="field-select" style="width:92px"><option>20 条/页</option></select></div>
+              </div>
+            </section>
+          </div>
+          <div class="finance-flow-detail-view" id="financeFlowDetailView">
+            <div class="deposit-detail-title"><button class="detail-back-btn" type="button" id="backFinanceFlowList">‹</button><h1>交易流水明细详情</h1></div>
+            <div class="finance-flow-detail-section"><div class="finance-flow-detail-title">基础信息</div><div class="finance-flow-detail-grid">
+              <label>供应商名称：</label><strong>上海示例科技有限公司</strong>
+              <label>账户号：</label><strong>8988423465</strong>
+              <label>交易流水号：</label><strong id="flowDetailSerial">15341</strong>
+              <label>类型：</label><strong id="flowDetailType">缴款</strong>
+            </div></div>
+            <div class="finance-flow-detail-section"><div class="finance-flow-detail-title">金额信息</div><div class="finance-flow-detail-grid">
+              <label>上期余额：</label><strong id="flowDetailPrevious">¥0.00</strong>
+              <label>本期增加额：</label><strong id="flowDetailIncrease">¥20,000.00</strong>
+              <label>本期减少额：</label><strong id="flowDetailDecrease">¥0.00</strong>
+              <label>余额：</label><strong id="flowDetailBalance">¥20,000.00</strong>
+            </div></div>
+            <div class="finance-flow-detail-section"><div class="finance-flow-detail-title">业务信息</div><div class="finance-flow-detail-grid">
+              <label>业务：</label><strong id="flowDetailBusiness">缴纳保证金</strong>
+              <label>已缴金额：</label><strong id="flowDetailPaid">¥20,000.00</strong>
+              <label>凭证：</label><div class="deposit-voucher-thumb">转账回单</div>
+              <label>操作人：</label><strong id="flowDetailOperator">薛飞</strong>
+              <label>操作时间：</label><strong id="flowDetailTime">2025-12-23 22:22:22</strong>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="module-page" data-page="system-role">
+          <section class="section">
+            <div class="section-head"><span>角色管理</span></div>
+            <div class="panel">
+              <div class="empty-state" style="min-height:320px">
+                <div>
+                  <div class="empty-illustration"></div>
+                  <strong>角色管理页面待补充</strong>
+                  <p style="color:var(--muted);font-size:12px;margin-top:6px">菜单及页面访问将根据当前用户权限控制。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="system-account">
+          <section class="section">
+            <div class="section-head"><span>子账户管理</span></div>
+            <div class="panel">
+              <div class="empty-state" style="min-height:320px">
+                <div>
+                  <div class="empty-illustration"></div>
+                  <strong>子账户管理页面待补充</strong>
+                  <p style="color:var(--muted);font-size:12px;margin-top:6px">菜单及页面访问将根据当前用户权限控制。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="merchant">
+          <section class="section">
+            <div class="section-head"><span>进驻状态</span></div>
+            <div class="panel">
+              <div class="onboarding-flow">
+                <div class="flow-step done" data-panel-target="reviewDetailPanel"><div class="flow-index">1</div><h3>提交初审资料</h3><p>企业主体、法人、银行账户和特殊资质已提交。</p><button type="button" data-panel-target="reviewDetailPanel">查看资料</button></div>
+                <div class="flow-step current panel-active" data-panel-target="sampleFlowPanel" id="merchantSampleFlowCard"><div class="flow-index">2</div><h3>试样提报</h3><p id="merchantSampleFlowDesc">供应商提交商品资料，经招商初审、收样审核、核价和品控检验后完成上新审核。</p><div class="sub-flow"><span data-sample-flow-node="apply">提交试样申请</span><span data-sample-flow-node="audit">招商初审</span><span data-sample-flow-node="ship">供应商寄样</span><span data-sample-flow-node="review">招商审核样品</span><span data-sample-flow-node="pricing">样品核价</span><span data-sample-flow-node="quality">样品检验</span><span data-sample-flow-node="result">上新结果</span></div><button type="button" id="merchantSamplePrimaryBtn" data-jump-module="product">去试样提报</button></div>
+                <div class="flow-step" data-panel-target="factoryPanel" id="factoryFlowCard"><div class="flow-index">3</div><h3>申请验厂</h3><p id="factoryFlowDesc">提交申请后由品控审核，根据审核结论动态插入验厂节点。</p><div class="sub-flow"><span data-factory-flow-node="apply">提交验厂申请</span><span data-factory-flow-node="audit">品控审核</span><span data-factory-flow-node="pay" style="display:none">线下缴费/上传凭证</span><span data-factory-flow-node="paid" style="display:none">平台审核凭证</span><span data-factory-flow-node="arrange" style="display:none">安排验厂</span><span data-factory-flow-node="supplement" style="display:none">补交资料</span><span data-factory-flow-node="result">验厂评级结果</span></div><button type="button" id="factoryPrimaryBtn" data-panel-target="factoryPanel">申请验厂</button></div>
+                <div class="flow-step" data-panel-target="contractPanel"><div class="flow-index">4</div><h3>签署入驻协议</h3><p>在线确认合同、合作协议和平台规则。</p><button type="button" data-panel-target="contractPanel" id="contractFlowActionBtn">去签署</button></div>
+                <div class="flow-step" data-panel-target="depositPanel"><div class="flow-index">5</div><h3>缴纳保证金</h3><p>根据类目和合作模式完成保证金缴纳。</p><button type="button" data-panel-target="depositPanel">缴纳保证金</button></div>
+                <div class="flow-step" data-panel-target="shopOpenPanel"><div class="flow-index">6</div><h3>店铺开通成功</h3><p>店铺开通后开放完整供应商管理能力。</p></div>
+              </div>
+              <div class="flow-summary">
+                <div class="side-stat"><label>当前阶段</label><strong id="summaryStage">试样提报</strong></div>
+                <div class="side-stat"><label>下一步</label><strong id="summaryNext">平台审核</strong></div>
+                <div class="side-stat"><label>预计完成</label><strong id="summaryEta">2 个工作日</strong></div>
+                <div class="side-stat"><label>店铺状态</label><strong id="summaryShopStatus" class="orange">未开通</strong></div>
+              </div>
+            </div>
+          </section>
+          <section class="section detail-panel active" id="sampleFlowPanel">
+            <div class="section-head"><span>试样提报流程节点</span></div>
+            <div class="node-detail" data-merchant-sample-node="apply">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">1</span>提交试样申请</div>
+                <div class="node-meta">状态：<strong class="green">已提交</strong></div>
+                <div class="node-meta">提交时间：<strong>2026-07-02 11:10</strong></div>
+                <div class="node-meta">提交人：<strong>张三</strong></div>
+              </div>
+              <div class="node-body" id="merchantSampleApplyBody">
+                <div class="audit-box"><span>当前暂无商品详细资料，请点击「去试样提报」进入商品中心新增试样提报。</span><strong class="orange" data-node-result>待提交</strong></div>
+              </div>
+            </div>
+            <div class="node-detail" data-merchant-sample-node="audit">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">2</span>招商初审</div>
+                <div class="node-meta">状态：<strong class="orange">待审核</strong></div>
+                <div class="node-meta">预计完成：<strong>1–2 个工作日</strong></div>
+                <div class="node-meta">审核方：<strong>招商</strong></div>
+                <button class="node-action" type="button" id="cancelSampleAuditBtn">撤销审核</button>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>招商审核商品基础资料与合作匹配度；不通过时反馈原因，供应商修改后重新提报。</span><strong class="orange">审核中</strong></div>
+              </div>
+            </div>
+            <div class="node-detail" data-merchant-sample-node="ship">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">3</span>供应商寄样</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">前置条件：<strong>招商初审通过</strong></div>
+                <div class="node-meta">处理人：<strong>供应商</strong></div>
+                <div class="node-actions">
+                  <button class="node-action" type="button" id="withdrawSampleApplyBtn">试样申请撤回</button>
+                  <button class="node-action" type="button" id="submitShipLogisticsBtn">提交物流信息</button>
+                </div>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>初审通过后，供应商填写物流信息并寄送样品。</span><strong>未开始</strong></div>
+              </div>
+            </div>
+            <div class="node-detail" data-merchant-sample-node="review">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">4</span>招商审核样品</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">处理人：<strong>招商</strong></div>
+                <div class="node-meta">审核结果：<strong>待反馈</strong></div>
+                <button class="node-action" type="button" id="reshipRejectedSampleBtn">重新寄样</button>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>招商确认收样后审核样品。样品合格进入核价；不合格则驳回并通知供应商重新寄样。</span><strong>未开始</strong></div>
+                <div id="sampleReviewRejectedTip" style="display:none;margin-top:10px;color:var(--danger);font-size:12px;line-height:20px;font-weight:600">驳回原因：样品与提报信息不一致或品质未达到选品要求，请按反馈重新寄送样品。</div>
+              </div>
+            </div>
+            <div class="node-detail" data-merchant-sample-node="pricing">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">5</span>样品核价</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">处理人：<strong>核价部</strong></div>
+                <button class="node-action" type="button" id="viewTestingProgressBtn">查看评测进度</button>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>核价部审核商品供货价、公域售价、促销价及成本信息。</span><strong>未开始</strong></div>
+              </div>
+            </div>
+            <div class="node-detail" data-merchant-sample-node="quality">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">6</span>样品检验</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">处理人：<strong>品控部</strong></div>
+                <button class="node-action" type="button" id="viewQualityReviewBtn">查看评测进度</button>
+              </div>
+              <div class="node-body"><div class="audit-box"><span>品控部检验样品品质、包装、规格及合规情况。</span><strong>未开始</strong></div></div>
+            </div>
+            <div class="node-detail" data-merchant-sample-node="result">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">7</span>上新审核结果</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">通过条件：<strong>核价、品控均通过</strong></div>
+                <button class="node-action" type="button" id="resubmitSampleBtn">修改后重新提报</button>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>核价与品控两项审核均通过后上新通过；任一不通过均通知供应商修改后重新提报。</span><strong>未开始</strong></div>
+                <div id="sampleFailedReasonTip" style="display:none;margin-top:10px;color:var(--danger);font-size:12px;line-height:20px;font-weight:600">原因：商品价格或样品质检不符合平台要求，请根据审核反馈修改后重新提报。</div>
+              </div>
+            </div>
+            <div class="status-guide">
+              <p>底部状态按钮用于演示不同试样提审状态，点击后同步更新主流程摘要和下方节点详情。</p>
+              <div class="status-actions">
+                <button class="active" type="button" data-sample-status="apply">去试样提报</button>
+                <button class="warn" type="button" data-sample-status="audit">招商初审</button>
+                <button type="button" data-sample-status="ship">寄送样品</button>
+                <button class="warn" type="button" data-sample-status="review">招商审核样品</button>
+                <button class="danger" type="button" data-sample-status="reviewRejected">样品不合格</button>
+                <button type="button" data-sample-status="pricing">样品核价</button>
+                <button type="button" data-sample-status="quality">样品检验</button>
+                <button class="danger" type="button" data-sample-status="failed">上新不通过</button>
+                <button type="button" data-sample-status="passed">上新通过</button>
+              </div>
+            </div>
+          </section>
+          <section class="section detail-panel" id="reviewDetailPanel">
+            <div class="section-head"><span>初审资料明细</span></div>
+            <div class="node-detail">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">1</span>提交初审资料</div>
+                <div class="node-meta">状态：<strong class="green">已提交</strong></div>
+                <div class="node-meta">提交时间：<strong>2026-07-02 10:18</strong></div>
+                <div class="node-meta">提交人：<strong>张三</strong></div>
+              </div>
+              <div class="node-body">
+                <div class="review-tabs">
+                  <button class="active" type="button" data-review-tab="baseInfo">基础信息</button>
+                  <button type="button" data-review-tab="companyInfo">企业信息</button>
+                  <button type="button" data-review-tab="intentProduct">意向爆品</button>
+                </div>
+                <div class="review-tab-panel active" id="baseInfo">
+                  <div class="filled-grid three">
+                    <div class="filled-item"><label>公司类型</label><strong>超级工厂</strong><p>知名品牌代工厂，具备稳定产能。</p></div>
+                    <div class="filled-item"><label>供货渠道</label><span class="filled-tag">山姆</span><span class="filled-tag">盒马</span><span class="filled-tag">Costco</span></div>
+                    <div class="filled-item"><label>是否愿意给平台定制自有品牌</label><strong>是</strong></div>
+                    <div class="filled-item"><label>公司去年销售额</label><strong>3,800 万元</strong></div>
+                    <div class="filled-item"><label>公司上个月销售额</label><strong>260 万元</strong></div>
+                    <div class="filled-item"><label>主营产品</label><strong>低温鲜果杯、冷链轻食、即食甜品</strong></div>
+                    <div class="filled-item wide"><label>产品优势</label><strong>自有冷链供应链，稳定供货，支持小批量定制和快速补货。</strong></div>
+                    <div class="filled-item wide"><label>主要销售渠道</label><strong>天猫、抖音、社群团购、线下精品商超。</strong></div>
+                    <div class="filled-item"><label>老板姓名</label><strong>张三</strong></div>
+                    <div class="filled-item"><label>老板手机号</label><strong>138****8000</strong></div>
+                    <div class="filled-item"><label>在公司担任的岗位</label><strong>总经理</strong></div>
+                    <div class="filled-item"><label>主理人姓名</label><strong>李四</strong></div>
+                    <div class="filled-item"><label>主理人手机号</label><strong>139****6118</strong></div>
+                    <div class="filled-item wide"><label>对平台的了解</label><strong>平台以家庭品质消费和会员制精选为主，适合冷链即食类爆品合作。</strong></div>
+                    <div class="filled-item wide"><label>产品能为平台创造的价值</label><strong>补充高复购冷链轻食类目，提升下午茶、办公场景和亲子场景商品供给。</strong></div>
+                    <div class="filled-item wide"><label>想对我们说的话</label><strong>希望优先参与平台冷链轻食试样和自有品牌联名合作。</strong></div>
+                  </div>
+                </div>
+                <div class="review-tab-panel" id="companyInfo">
+                  <div class="filled-grid">
+                    <div class="filled-item"><label>企业主体</label><strong>上海示例科技有限公司</strong><p>统一社会信用代码：91310000MA1K3XXXX8<br />注册地址：上海市浦东新区示例路 88 号</p></div>
+                    <div class="filled-item"><label>营业执照</label><strong class="green">已上传</strong><p>有效期：2018-06-18 至 2038-06-17</p><div class="thumb-grid"><div class="doc-thumb"><span>营业执照<br />JPG</span></div></div></div>
+                    <div class="filled-item"><label>法人信息</label><strong>张三</strong><p>证件有效期：长期</p><div class="thumb-grid"><div class="doc-thumb"><span>身份证<br />人像面</span></div><div class="doc-thumb"><span>身份证<br />国徽面</span></div></div></div>
+                    <div class="filled-item"><label>对公银行账户</label><strong>招商银行上海浦东支行</strong><p>开户名：上海示例科技有限公司<br />账号：6225888888888888888</p><div class="thumb-grid"><div class="doc-thumb"><span>开户许可证<br />PNG</span></div><div class="doc-thumb"><span>银行账户<br />证明</span></div></div></div>
+                    <div class="filled-item"><label>特殊经营资质</label><strong class="green">2 张已上传</strong><p>食品经营许可证、冷链食品备案证明</p><div class="thumb-grid"><div class="doc-thumb"><span>食品经营<br />许可证</span></div><div class="doc-thumb"><span>冷链食品<br />备案</span></div></div></div>
+                    <div class="filled-item"><label>补充资质</label><strong class="green">1 张已上传</strong><p>品牌授权链路补充材料</p><div class="thumb-grid"><div class="doc-thumb"><span>品牌授权<br />链路</span></div></div></div>
+                    <div class="filled-item wide"><label>补充说明</label><strong>冷链食品类目资质补充，支持平台复核。</strong></div>
+                  </div>
+                </div>
+                <div class="review-tab-panel" id="intentProduct">
+                  <div class="filled-grid">
+                    <div class="filled-item"><label>入驻品类</label><strong>生鲜水果 / 轻食甜品</strong></div>
+                    <div class="filled-item"><label>商品名称</label><strong>低温鲜果杯</strong></div>
+                    <div class="filled-item"><label>商品图片</label><span class="filled-tag">主图已上传</span><span class="filled-tag">包装图已上传</span><span class="filled-tag">细节图已上传</span></div>
+                    <div class="filled-item"><label>商品供货价</label><strong>¥29.90</strong></div>
+                    <div class="filled-item"><label>当前零售价</label><strong>¥49.90</strong></div>
+                    <div class="filled-item"><label>商品规格</label><strong>180g*6，冷链发货</strong></div>
+                    <div class="filled-item wide"><label>商品核心卖点</label><strong>低温锁鲜、即食轻负担、适合办公室下午茶和家庭囤货。</strong></div>
+                    <div class="filled-item wide"><label>提报定位</label><strong>首次入驻平台意向合作爆品，已提交商品基础资料、供货价、零售价和商品核心卖点。</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section detail-panel" id="factoryPanel">
+            <div class="section-head"><span>验厂记录</span></div>
+            <div class="node-detail" data-factory-node="apply">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">1</span>申请验厂</div>
+                <div class="node-meta">状态：<strong class="orange">待提交</strong></div>
+                <div class="node-meta">预计完成：<strong>1-3 个工作日</strong></div>
+                <div class="node-meta">处理方：<strong>供应商</strong></div>
+                <button class="node-action show" type="button" id="submitFactoryApplyBtn">提交验厂申请</button>
+              </div>
+              <div class="node-body">
+                <div class="audit-box" id="factoryApplyEmptyBody"><span>当前暂无验厂申请资料，请点击「提交验厂申请」填写工厂地址、验厂联系人、产线信息和配合时间。</span><strong class="orange">资料待提交</strong></div>
+                <div class="filled-grid three" id="factoryApplySubmittedBody" style="display:none">
+                  <div class="filled-item"><label>验厂联系人</label><strong>李四</strong><p>手机号：139****6118</p></div>
+                  <div class="filled-item"><label>工厂地址</label><strong>上海市浦东新区示例产业园 3 号楼</strong><p>支持冷链仓、生产车间和质检间现场核验。</p></div>
+                  <div class="filled-item"><label>验厂类型</label><strong>首次入驻验厂</strong><p>覆盖生产能力、品控体系、仓储条件和合规资料。</p></div>
+                  <div class="filled-item"><label>产线信息</label><strong>低温鲜果杯自动灌装线 2 条</strong><p>日产能约 30,000 份。</p></div>
+                  <div class="filled-item"><label>配合时间</label><strong>工作日 全天</strong></div>
+                  <div class="filled-item wide"><label>提交说明</label><strong>供应商补充验厂联系人、工厂地址、产线资料和可配合时间后提交平台审核。</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="node-detail" data-factory-node="audit">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">2</span>品控审核</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">审核方：<strong>品控部</strong></div>
+                <div class="node-meta">预计完成：<strong>1-3 个工作日</strong></div>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>品控部审核资料并判定需验厂、延后验厂或无需验厂；需验厂时同步确定三方验厂或平台验厂。</span><strong>未开始</strong></div>
+                <div class="filled-grid" id="factoryMethodOptions" style="display:none;margin-top:12px">
+                  <div class="filled-item" data-factory-method="third" style="border-color:var(--primary);background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--primary)"><label>验厂方式一</label><strong style="color:var(--primary-dark)">三方专业机构验厂</strong><p>由平台合作的第三方专业机构执行验厂并出具报告。</p></div>
+                  <div class="filled-item" data-factory-method="platform"><label>验厂方式二</label><strong>平台专业品控验厂</strong><p>由平台专业品控人员执行现场或远程验厂。</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="node-detail" data-factory-node="pay" id="factoryPayNode">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">3</span>线下缴纳验厂费用</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">费用：<strong>¥1,000.00</strong></div>
+                <div class="node-meta">处理方：<strong>供应商</strong></div>
+                <button class="node-action" type="button" id="payFactoryFeeBtn">上传打款凭证</button>
+              </div>
+              <div class="node-body">
+                <div class="filled-grid">
+                  <div class="filled-item"><label>缴费金额</label><strong>¥1,000.00</strong><p>一次性验厂费用，缴纳后不支持退款。</p></div>
+                  <div class="filled-item"><label>缴费要求</label><strong>线下对公转账并上传凭证</strong><p>请上传真实、清晰且可核验的银行转账凭证。</p></div>
+                </div>
+                <div class="factory-tip">凭证审核不通过时，需根据平台反馈重新上传。</div>
+              </div>
+            </div>
+            <div class="node-detail" data-factory-node="paid" id="factoryPaidNode">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">4</span>平台审核打款凭证</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">预计完成：<strong>1-3 个工作日</strong></div>
+                <div class="node-meta">处理方：<strong>平台</strong></div>
+                <button class="node-action" type="button" id="reuploadFactoryVoucherBtn">重新上传凭证</button>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>平台核对到账信息与打款凭证，审核通过后安排验厂；不通过需重新上传凭证。</span><strong>未开始</strong></div>
+              </div>
+            </div>
+            <div class="node-detail" data-factory-node="arrange" id="factoryArrangeNode">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">5</span>安排验厂</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">验厂方式：<strong>三方验厂 / 平台验厂</strong></div>
+                <div class="node-meta">处理方：<strong>品控部</strong></div>
+              </div>
+              <div class="node-body"><div class="audit-box"><span>平台审核打款凭证通过后，品控部协调验厂时间并执行现场或远程验厂。</span><strong>未开始</strong></div></div>
+            </div>
+            <div class="node-detail" data-factory-node="supplement" id="factorySupplementNode">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number" id="factorySupplementNodeNumber">6</span>补交验厂资料</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">资料要求：<strong>待平台确认</strong></div>
+                <div class="node-meta">处理方：<strong>供应商</strong></div>
+                <button class="node-action" type="button" id="submitFactorySupplementBtn">提交验厂资料</button>
+              </div>
+              <div class="node-body">
+                <div class="audit-box"><span>请按平台要求上传验厂佐证资料，支持 PDF、图片和视频；提交后由平台复核。</span><strong>待提交</strong></div>
+              </div>
+            </div>
+            <div class="node-detail" data-factory-node="result" id="factoryResultNode">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number" id="factoryResultNodeNumber">7</span>验厂评级结果</div>
+                <div class="node-meta">状态：<strong>待开始</strong></div>
+                <div class="node-meta">结果：<strong data-factory-result-meta>待输出</strong></div>
+                <div class="node-meta">处理方：<strong>平台品控</strong></div>
+                <button class="node-action" type="button" id="resubmitFactoryApplyBtn">重新提交验厂申请</button>
+              </div>
+              <div class="node-body">
+                <div class="factory-result-grid" id="factoryResultScoreBody" style="display:none">
+                  <div class="factory-result-box"><label>验厂结论</label><strong class="green">验厂通过</strong><p>工厂信息、产线能力和品控记录满足平台要求。</p></div>
+                  <div class="factory-result-box"><label>验厂评级</label><strong class="factory-score"><span>S</span>通过</strong><p>S/A 级通过，可进入协议签署和保证金环节。</p></div>
+                  <div class="factory-result-box"><label>报告编号</label><strong>FC-RPT-20260709</strong><p>平台品控组于 2026-07-09 输出。</p></div>
+                </div>
+                <div class="audit-box" id="factoryResultNoScoreBody" style="display:none"><span>平台审核后判定当前供应商可暂不进行现场验厂，记录为验厂通过。该场景不展示验厂评级和工厂打分。</span><strong class="green">验厂通过</strong></div>
+                <div class="audit-box" id="factoryResultFailedBody" style="display:none"><span>B 级需整改后重新发起验厂；C/D 级不符合准入条件，流程结束且不可进入协议签署。</span><strong class="red">验厂不通过</strong></div>
+                <div class="audit-box" id="factoryResultPendingBody"><span>平台输出验厂结论。无需验厂或延后验厂场景直接记录验厂通过，不展示工厂打分；实际验厂场景展示验厂打分。</span><strong>未开始</strong></div>
+              </div>
+            </div>
+            <div class="status-guide">
+              <p>底部状态按钮用于演示不同验厂状态，点击后同步更新主流程卡片、摘要和下方节点详情。</p>
+              <div class="status-actions">
+                <button class="active" type="button" data-factory-status="apply">申请验厂</button>
+                <button class="warn" type="button" data-factory-status="audit">平台审核确认</button>
+                <button type="button" data-factory-status="noNeed">无需验厂</button>
+                <button class="warn" type="button" data-factory-status="needSupplement">补交验厂资料</button>
+                <button type="button" data-factory-status="delayed">延后验厂</button>
+                <button type="button" data-factory-status="pay">需要验厂</button>
+                <button type="button" data-factory-status="paid">平台审核凭证</button>
+                <button class="danger" type="button" data-factory-status="voucherRejected">平台审核凭证不通过</button>
+                <button type="button" data-factory-status="arrange">安排验厂</button>
+                <button type="button" data-factory-status="supplement">已补交资料</button>
+                <button type="button" data-factory-status="passed">S/A 级通过</button>
+                <button class="danger" type="button" data-factory-status="gradeB">B 级重新验厂</button>
+                <button class="danger" type="button" data-factory-status="failed">C/D 级不通过</button>
+                <button type="button" id="toggleFactorySupplementNodeBtn">显示补交资料节点</button>
+              </div>
+            </div>
+          </section>
+          <section class="section detail-panel" id="contractPanel">
+            <div class="section-head"><span>合同协议</span></div>
+            <div class="node-detail">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">1</span>签署入驻协议</div>
+                <div class="node-meta">状态：<strong class="orange">待签署</strong></div>
+                <div class="node-meta">协议版本：<strong>V2026.07</strong></div>
+                <button class="node-action show" type="button" data-toast="已打开协议签署页" id="contractDetailActionBtn">去签署</button>
+              </div>
+              <div class="node-body">
+                <div class="filled-grid" id="contractDetailGrid">
+                  <div class="filled-item wide"><label>合作协议</label><strong>待签署</strong><p>含供货、履约、售后、结算和商品上架约定。协议签署完成后不可直接撤回，如需变更需联系平台招商/商管重新发起协议版本。</p></div>
+                </div>
+                <div class="status-guide" style="margin-top:14px">
+                  <p>用于演示协议签署完成后的流程流转，点击后进入缴纳保证金环节。</p>
+                  <div class="status-actions">
+                    <button type="button" id="simulateContractSignedBtn">模拟已签署</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section detail-panel" id="depositPanel">
+            <div class="section-head"><span>保证金管理</span></div>
+            <div class="node-detail" id="depositNode">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">1</span>缴纳保证金</div>
+                <div class="node-meta">状态：<strong class="orange" id="depositStatusText">待缴纳</strong></div>
+                <div class="node-meta">应缴金额：<strong>¥20,000.00</strong></div>
+                <div class="node-meta">收款方：<strong>亲至源选平台</strong></div>
+                <button class="node-action show" type="button" id="depositUploadBtn">上传打款凭证</button>
+              </div>
+              <div class="node-body">
+                <div class="filled-grid">
+                  <div class="filled-item"><label>收款账户</label><strong>亲至源选（上海）科技有限公司</strong><p>招商银行上海浦东支行｜6225 8888 8888 8888</p></div>
+                  <div class="filled-item" id="depositVoucherStatusCard"><label>凭证状态</label><strong class="orange" id="depositVoucherStatus">待上传</strong><p>对公转账后上传银行凭证｜<span id="depositVoucherTime">待提交</span></p></div>
+                </div>
+              </div>
+            </div>
+            <div class="node-detail" id="depositFinanceNode">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">2</span>财务确认到账</div>
+                <div class="node-meta">状态：<strong id="depositFinanceStatus">待开始</strong></div>
+                <div class="node-meta">处理方：<strong>平台财务</strong></div>
+                <div class="node-meta" id="depositFinanceResultMeta">审核结果：<strong id="depositFinanceResult">待开始</strong></div>
+              </div>
+              <div class="node-body">
+                <div class="filled-grid">
+                  <div class="filled-item wide" id="depositFinancePending"><label>到账确认</label><strong>待开始</strong><p><span>上传凭证后由平台财务核对到账信息。</span></p></div>
+                  <div class="filled-item wide" id="depositVoucherInfo" style="display:none"><label>上传内容</label><strong>已缴金额：¥20,000.00；凭证数量：1 张；提交人：张三</strong><p>凭证类型：银行转账回单；提交手机号：138****8000；提交时间：2026-07-09 17:20。</p><div class="thumb-grid"><div class="doc-thumb"><span>转账回单<br />JPG</span></div></div></div>
+                  <div class="filled-item wide" id="depositRejectReason" style="display:none"><label>不通过原因</label><strong class="red">凭证金额与应缴金额不一致</strong><p>请核对打款金额后重新打款，并再次上传新的转账凭证。</p></div>
+                </div>
+                <div class="status-guide" style="margin-top:14px">
+                  <p>切换保证金缴纳及到账确认状态。</p>
+                  <div class="status-actions">
+                    <button class="active" type="button" data-deposit-status="pending">待缴纳</button>
+                    <button type="button" data-deposit-status="uploaded">已上传凭证</button>
+                    <button type="button" data-deposit-status="approved">财务审核通过</button>
+                    <button class="danger" type="button" data-deposit-status="rejected">财务审核不通过</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section detail-panel" id="shopOpenPanel">
+            <div class="section-head"><span>店铺开通成功</span></div>
+            <div class="shop-success-result">
+              <div class="shop-success-logo">✓</div>
+              <h2>店铺开通成功</h2>
+              <p>您的店铺距离开通还差最后一步，完成后即可开始经营。</p>
+              <button class="primary-btn" type="button" data-wechat-onboarding>微信支付进件</button>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="wechat-onboarding">
+          <div class="form-page-head">
+            <button class="back-btn" type="button" data-page-link="merchant"><iconify-icon icon="icon-park-outline:left"></iconify-icon></button>
+            <span>微信支付进件</span>
+          </div>
+          <div class="process-stepper" id="wechatOnboardingStepper">
+            <div class="process-step active" data-wechat-step="base"><span class="process-index">1</span><span>基础信息</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-wechat-step="subject"><span class="process-index">2</span><span>主体信息</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-wechat-step="legal"><span class="process-index">3</span><span>法人身份信息</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-wechat-step="admin"><span class="process-index">4</span><span>超级管理员</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-wechat-step="review"><span class="process-index">5</span><span>微信审核</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-wechat-step="sign"><span class="process-index">6</span><span>签约</span></div>
+          </div>
+          <div class="alert" style="border-color:#BDE8DE;background:#F0FBF8;color:#35655C">
+            <span>进件资料提交后不支持在供应商端修改，如需调整请联系平台管理员。</span>
+          </div>
+          <section class="form-section">
+            <div class="form-section-title">基础信息</div>
+            <div class="form-body"><div class="form-grid">
+              <div class="form-field"><label class="required">商户简称</label><input class="field-input" value="上海示例食品" /></div>
+              <div class="form-field"><label class="required">客服电话</label><input class="field-input" value="400-888-8888" /></div>
+              <div class="form-field full"><label class="required">经营场景</label><div class="checkbox-row"><label><input type="checkbox" checked /> 小程序商城</label><label><input type="checkbox" checked /> 直播电商</label></div></div>
+            </div></div>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title">主体信息</div>
+            <div class="form-body"><div class="form-grid">
+              <div class="form-field"><label class="required">主体类型</label><select class="field-select"><option selected>企业</option><option>个体工商户</option></select></div>
+              <div class="form-field"><label class="required">证件类型</label><select class="field-select"><option selected>统一社会信用代码证</option></select></div>
+              <div class="form-field"><label class="required">营业执照注册号</label><input class="field-input" value="91310000MA1EXAMPLE" /></div>
+              <div class="form-field"><label class="required">注册地址</label><input class="field-input" value="上海市浦东新区示例路 88 号" /></div>
+              <div class="form-field full"><label class="required">营业执照</label><div class="upload-row"><div class="upload-tile">营业执照</div></div></div>
+            </div></div>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title">法人身份信息</div>
+            <div class="form-body"><div class="form-grid">
+              <div class="form-field"><label class="required">法人姓名</label><input class="field-input" value="张三" /></div>
+              <div class="form-field"><label class="required">身份证号码</label><input class="field-input" value="310***********1234" /></div>
+              <div class="form-field"><label class="required">证件有效期开始</label><input class="field-input" value="2021-08-09" /></div>
+              <div class="form-field"><label class="required">证件有效期结束</label><input class="field-input" value="长期" /></div>
+              <div class="form-field full"><label class="required">身份证照片</label><div class="upload-row"><div class="upload-tile">身份证人像面</div><div class="upload-tile">身份证国徽面</div></div></div>
+            </div></div>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title">超级管理员信息</div>
+            <div class="form-body">
+              <div class="factory-tip" style="margin-bottom:14px">超级管理员负责微信支付进件、签约及身份验证，请确保信息真实有效。</div>
+              <div class="form-grid">
+                <div class="form-field full"><label class="required">管理员类型</label><div class="radio-row"><label><input type="radio" name="wechatAdminType" checked /> 经营者/法人</label><label><input type="radio" name="wechatAdminType" /> 负责人</label></div></div>
+                <div class="form-field"><label class="required">管理员姓名</label><input class="field-input" value="张三" /></div>
+                <div class="form-field"><label class="required">手机号码</label><input class="field-input" value="138****8000" /></div>
+                <div class="form-field"><label class="required">身份证号码</label><input class="field-input" value="310***********1234" /></div>
+                <div class="form-field"><label>业务办理授权函</label><div class="upload-row"><div class="upload-tile">上传文件</div></div></div>
+              </div>
+            </div>
+          </section>
+          <div class="form-footer">
+            <button class="secondary-btn" type="button" data-page-link="merchant">返回</button>
+            <button class="secondary-btn" type="button" data-toast="微信支付进件草稿已保存">保存草稿</button>
+            <button class="primary-btn" type="button" id="submitWechatOnboardingBtn">提交微信审核</button>
+          </div>
+        </div>
+
+        <div class="module-page" data-page="merchant-profile">
+          <section class="section">
+            <div class="section-head"><span>商家资料</span></div>
+            <div class="panel">
+              <div class="merchant-profile-tabs">
+                <button class="active" type="button" data-merchant-profile-tab="base">基础信息</button>
+                <button type="button" data-merchant-profile-tab="afterSale">售后信息</button>
+                <button type="button" data-merchant-profile-tab="finance">财务信息</button>
+                <button type="button" data-merchant-profile-tab="certification">认证信息</button>
+                <button type="button" data-merchant-profile-tab="qualification">资质材料信息</button>
+                <button type="button" data-merchant-profile-tab="other">其他信息</button>
+                <button type="button" data-merchant-profile-tab="contract">购销合同</button>
+              </div>
+
+              <div class="merchant-profile-panel active" data-merchant-profile-panel="base">
+                <div class="merchant-readonly-section">
+                  <div class="merchant-readonly-title"><span>供应商基础信息</span><span class="green">资料已完善</span></div>
+                  <div class="merchant-readonly-grid">
+                    <div class="merchant-readonly-item"><label>供应商 ID</label><strong>3465</strong></div>
+                    <div class="merchant-readonly-item"><label>供应商名称</label><strong>上海示例科技有限公司</strong></div>
+                    <div class="merchant-readonly-item"><label>供应商编码</label><strong>sup20260709103465</strong></div>
+                    <div class="merchant-readonly-item"><label>供应商简介</label><strong>品质食品及日化商品综合供应商</strong></div>
+                    <div class="merchant-readonly-item"><label>法人姓名</label><strong>张三</strong></div>
+                    <div class="merchant-readonly-item"><label>法人手机号</label><strong>138****8000</strong></div>
+                    <div class="merchant-readonly-item"><label>联系人</label><strong>李四</strong></div>
+                    <div class="merchant-readonly-item"><label>联系人手机号</label><strong>139****6118</strong></div>
+                    <div class="merchant-readonly-item"><label>邮箱地址</label><strong>supplier@example.com</strong></div>
+                    <div class="merchant-readonly-item"><label>创建时间</label><strong>2026-07-02 10:18:27</strong></div>
+                    <div class="merchant-readonly-item"><label>办公地址</label><strong>上海市浦东新区</strong></div>
+                    <div class="merchant-readonly-item"><label>详细地址</label><strong>示例产业园 3 号楼</strong></div>
+                    <div class="merchant-readonly-item"><label>对接负责人</label><strong>平台招商一组</strong></div>
+                    <div class="merchant-readonly-item"><label>合同类型</label><strong>电子合同</strong><p>有效期：2026-07-10 至 2027-07-09</p></div>
+                    <div class="merchant-readonly-item"><label>企业纳税人类型</label><strong>一般纳税人</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="merchant-profile-panel" data-merchant-profile-panel="afterSale">
+                <div class="merchant-readonly-section">
+                  <div class="merchant-readonly-title">售后联系信息</div>
+                  <div class="merchant-readonly-grid">
+                    <div class="merchant-readonly-item"><label>售后联系人</label><strong>王敏</strong></div>
+                    <div class="merchant-readonly-item"><label>售后联系电话</label><strong>136****2789</strong></div>
+                    <div class="merchant-readonly-item"><label>售后邮箱</label><strong>service@example.com</strong></div>
+                    <div class="merchant-readonly-item wide"><label>售后地址</label><strong>上海市浦东新区示例产业园 3 号楼售后仓</strong><p>该地址为默认售后收货地址，不可删除。</p></div>
+                    <div class="merchant-readonly-item wide"><label>供应商退货地址</label><strong>上海市浦东新区示例产业园 5 号楼退货仓</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="merchant-profile-panel" data-merchant-profile-panel="finance">
+                <div class="merchant-readonly-section">
+                  <div class="merchant-readonly-title">财务结算信息</div>
+                  <div class="merchant-readonly-grid">
+                    <div class="merchant-readonly-item"><label>账号类型</label><strong>对公账户</strong></div>
+                    <div class="merchant-readonly-item"><label>账号名称</label><strong>上海示例科技有限公司</strong></div>
+                    <div class="merchant-readonly-item"><label>开户银行</label><strong>招商银行</strong></div>
+                    <div class="merchant-readonly-item"><label>银行卡号</label><strong>6225 8888 8888 8888</strong></div>
+                    <div class="merchant-readonly-item"><label>地区</label><strong>上海市</strong></div>
+                    <div class="merchant-readonly-item"><label>支行名称</label><strong>招商银行上海浦东支行</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="merchant-profile-panel" data-merchant-profile-panel="certification">
+                <div class="merchant-readonly-section">
+                  <div class="merchant-cert-state"><strong>微信支付进件认证</strong><span>进件状态：<b class="orange" id="wechatCertStatus">待提交资料</b></span><button class="primary-btn" type="button" id="submitWechatCertBtn">提交微信审核</button></div>
+                  <div class="merchant-cert-steps">
+                    <div class="merchant-cert-step current" data-wechat-cert-step="submit"><span>1</span><em>待提交资料</em></div>
+                    <div class="merchant-cert-step" data-wechat-cert-step="review"><span>2</span><em>微信审核中</em></div>
+                    <div class="merchant-cert-step" data-wechat-cert-step="legal"><span>3</span><em>待法人认证</em></div>
+                    <div class="merchant-cert-step" data-wechat-cert-step="sign"><span>4</span><em>待签约</em></div>
+                    <div class="merchant-cert-step" data-wechat-cert-step="success"><span>5</span><em>开通成功</em></div>
+                  </div>
+                  <div class="wechat-cert-link" id="wechatCertLinkPanel" hidden><strong id="wechatCertLinkLabel">认证链接</strong><a id="wechatCertLink" href="https://pay.weixin.qq.com/public/apply4ec_sign/" target="_blank" rel="noopener">https://pay.weixin.qq.com/public/apply4ec_sign/</a><button type="button" id="copyWechatCertLinkBtn">复制</button></div>
+                </div>
+                <div class="merchant-profile-subtabs">
+                  <button class="active" type="button" data-merchant-cert-tab="base">基础信息</button>
+                  <button type="button" data-merchant-cert-tab="subject">主体信息</button>
+                  <button type="button" data-merchant-cert-tab="legal">法人身份信息</button>
+                  <button type="button" data-merchant-cert-tab="admin">超级管理员信息</button>
+                </div>
+                <div class="merchant-cert-panel active" data-merchant-cert-panel="base">
+                  <div class="merchant-readonly-section"><div class="merchant-readonly-title">基础信息</div><div class="merchant-readonly-grid">
+                    <div class="merchant-readonly-item"><label>商户简称</label><strong>上海示例食品</strong></div>
+                    <div class="merchant-readonly-item"><label>客服电话</label><strong>400-888-8888</strong></div>
+                    <div class="merchant-readonly-item wide"><label>经营场景</label><strong>小程序商城、直播电商</strong></div>
+                  </div></div>
+                </div>
+                <div class="merchant-cert-panel" data-merchant-cert-panel="subject">
+                  <div class="merchant-readonly-section">
+                    <div class="merchant-readonly-title">主体信息</div>
+                    <div class="merchant-readonly-grid">
+                      <div class="merchant-readonly-item"><label>主体类型</label><strong>企业</strong></div>
+                      <div class="merchant-readonly-item"><label>证件类型</label><strong>三证合一</strong></div>
+                      <div class="merchant-readonly-item"><label>统一社会信用代码</label><strong>91310000MA1K3XXXX8</strong></div>
+                      <div class="merchant-readonly-item"><label>营业期限</label><strong>长期</strong></div>
+                      <div class="merchant-readonly-item"><label>注册地址</label><strong>上海市浦东新区示例产业园 3 号楼</strong></div>
+                      <div class="merchant-readonly-item wide"><label>营业执照</label><div class="thumb-grid"><div class="doc-thumb"><span>营业执照<br />JPG</span></div></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="merchant-cert-panel" data-merchant-cert-panel="legal">
+                  <div class="merchant-readonly-section"><div class="merchant-readonly-title">法人身份信息</div><div class="merchant-readonly-grid">
+                    <div class="merchant-readonly-item"><label>法人姓名</label><strong>张三</strong></div>
+                    <div class="merchant-readonly-item"><label>证件类型</label><strong>居民身份证</strong></div>
+                    <div class="merchant-readonly-item"><label>证件有效期</label><strong>长期</strong></div>
+                    <div class="merchant-readonly-item wide"><label>证件图片</label><div class="thumb-grid"><div class="doc-thumb"><span>身份证<br />人像面</span></div><div class="doc-thumb"><span>身份证<br />国徽面</span></div></div></div>
+                  </div></div>
+                </div>
+                <div class="merchant-cert-panel" data-merchant-cert-panel="admin">
+                  <div class="merchant-readonly-section">
+                    <div class="merchant-readonly-title"><span>超级管理员信息</span></div>
+                    <div class="form-body">
+                      <div class="form-grid">
+                        <div class="form-field full"><label class="required">超级管理员类型</label><div class="radio-row"><label><input type="radio" name="merchantWechatAdminType" value="legal" checked /> 经营者/法人</label><label><input type="radio" name="merchantWechatAdminType" value="manager" /> 负责人</label></div></div>
+                        <div class="form-field"><label class="required">管理员姓名</label><input class="field-input" id="wechatAdminName" value="张三" readonly /></div>
+                        <div class="form-field"><label class="required">手机号码</label><input class="field-input" id="wechatAdminPhone" value="138****8000" readonly /></div>
+                        <div class="form-field"><label class="required">身份证号码</label><input class="field-input" id="wechatAdminIdNo" value="310***********1234" readonly /></div>
+                        <div class="form-field"><label class="required">联系邮箱</label><input class="field-input" id="wechatAdminEmail" value="admin@example.com" readonly /></div>
+                        <div class="form-field full" id="wechatAdminAuthField" style="display:none"><label class="required">业务办理授权函</label><div class="upload-row"><div class="upload-tile">上传文件</div></div></div>
+                      </div>
+                      <div class="toolbar-row" id="wechatAdminToolbar" style="justify-content:flex-end;padding:14px 0 0">
+                        <button class="secondary-btn" type="button" id="cancelWechatAdminEditBtn">取消</button>
+                        <button class="primary-btn" type="button" id="saveWechatAdminEditBtn">保存</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wechat-cert-controls">
+                  <button class="active" type="button" data-wechat-cert-status="submit">待提交资料</button>
+                  <button type="button" data-wechat-cert-status="review">微信审核中</button>
+                  <button type="button" data-wechat-cert-status="legal">待法人认证</button>
+                  <button type="button" data-wechat-cert-status="sign">待签约</button>
+                  <button type="button" data-wechat-cert-status="success">开通成功</button>
+                </div>
+              </div>
+
+              <div class="merchant-profile-panel" data-merchant-profile-panel="qualification">
+                <div class="merchant-readonly-section">
+                  <div class="merchant-readonly-title"><span>资质材料信息</span><span class="green">均在有效期内</span></div>
+                  <div class="merchant-doc-groups">
+                    <div class="merchant-doc-row"><strong>品牌授权书</strong><div class="thumb-grid"><div class="doc-thumb"><span>授权书<br />01</span></div><div class="doc-thumb"><span>授权书<br />02</span></div><div class="doc-thumb"><span>授权链路</span></div></div><time>有效期：2025-11-01 至 2027-12-31</time></div>
+                    <div class="merchant-doc-row"><strong>商标注册证</strong><div class="thumb-grid"><div class="doc-thumb"><span>商标证<br />01</span></div><div class="doc-thumb"><span>商标证<br />02</span></div><div class="doc-thumb"><span>商标证<br />03</span></div></div><time>有效期：2019-02-14 至 2039-02-13</time></div>
+                    <div class="merchant-doc-row"><strong>食品生产许可证</strong><div class="thumb-grid"><div class="doc-thumb"><span>食品生产<br />许可证</span></div><div class="doc-thumb"><span>许可明细</span></div></div><time>有效期：2024-06-05 至 2028-07-25</time></div>
+                    <div class="merchant-doc-row"><strong>化妆品生产许可证</strong><div class="thumb-grid"><div class="doc-thumb"><span>化妆品<br />许可证</span></div><div class="doc-thumb"><span>许可附件</span></div></div><time>有效期：2021-09-29 至 2026-09-28</time></div>
+                    <div class="merchant-doc-row"><strong>医疗器械生产许可证</strong><div class="thumb-grid"><div class="doc-thumb"><span>医疗器械<br />许可证</span></div><div class="doc-thumb"><span>备案凭证</span></div></div><time>有效期：长期</time></div>
+                    <div class="merchant-doc-row"><strong>其他证书</strong><div class="thumb-grid"><div class="doc-thumb"><span>特殊经营<br />资质</span></div><div class="doc-thumb"><span>补充资质</span></div></div><time>有效期：2025-06-23 至 2027-06-23</time></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="merchant-profile-panel" data-merchant-profile-panel="other">
+                <div class="merchant-readonly-section"><div class="merchant-readonly-title">其他信息</div><div class="merchant-readonly-grid">
+                  <div class="merchant-readonly-item"><label>主要销售渠道</label><strong>天猫、抖音、线下商超</strong></div>
+                  <div class="merchant-readonly-item"><label>主营品类</label><strong>食品、日化、个护清洁</strong></div>
+                  <div class="merchant-readonly-item"><label>年销售额</label><strong>5,000 万元</strong></div>
+                  <div class="merchant-readonly-item wide"><label>合作优势</label><strong>具备稳定供应链、成熟品控体系与全国仓配能力。</strong></div>
+                </div></div>
+              </div>
+
+              <div class="merchant-profile-panel" data-merchant-profile-panel="contract">
+                <div class="merchant-readonly-section"><div class="merchant-readonly-title">购销合同</div><div class="merchant-readonly-grid">
+                  <div class="merchant-readonly-item"><label>合同名称</label><strong>亲至源选供应商购销合同</strong></div>
+                  <div class="merchant-readonly-item"><label>合同版本</label><strong>V2026.07</strong></div>
+                  <div class="merchant-readonly-item"><label>签署状态</label><strong class="green">已签署</strong></div>
+                  <div class="merchant-readonly-item"><label>生效时间</label><strong>2026-07-10 00:00:00</strong></div>
+                  <div class="merchant-readonly-item"><label>失效时间</label><strong>2027-07-09 23:59:59</strong></div>
+                  <div class="merchant-readonly-item"><label>协议文件</label><button class="secondary-btn" type="button" data-toast="已下载购销合同">下载电子合同</button></div>
+                </div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="merchant-address">
+          <section class="section">
+            <div class="section-head"><span>地址管理</span></div>
+            <div class="panel">
+              <div class="address-tabs">
+                <button class="active" type="button" data-address-tab="afterSale">售后地址</button>
+                <button type="button" data-address-tab="sampleReturn">试样退货地址</button>
+              </div>
+              <div class="address-list-view active" id="addressListView">
+                <div class="toolbar-row" style="padding:0 14px">
+                  <p style="color:var(--muted);font-size:12px">售后地址与试样退货地址分别维护，互不影响。</p>
+                  <div style="display:flex;gap:10px">
+                    <button class="secondary-btn" type="button" id="toggleAddressDataBtn">切换有数据状态</button>
+                    <button class="primary-btn" type="button" id="addAddressTopBtn">新增地址</button>
+                  </div>
+                </div>
+                <div id="addressContent"></div>
+              </div>
+              <div class="address-form" id="addressFormView">
+                <div class="form-section" style="border:0;box-shadow:none;margin:0">
+                  <div class="form-section-title" id="addressFormTitle">新增地址</div>
+                  <div class="form-body">
+                    <div class="form-grid">
+                      <div class="form-field"><label class="required">收货人</label><input class="field-input" id="addressReceiver" placeholder="请输入收货人" /></div>
+                      <div class="form-field"><label class="required">手机号</label><input class="field-input" id="addressPhone" placeholder="请输入手机号" /></div>
+                      <div class="form-field"><label class="required">所在地区</label><input class="field-input" id="addressRegion" placeholder="省 / 市 / 区" /></div>
+                      <div class="form-field full"><label class="required">详细地址</label><textarea class="field-textarea" id="addressDetail" placeholder="请输入详细地址"></textarea></div>
+                      <div class="form-field full" id="addressDefaultField">
+                        <label>默认地址</label>
+                        <div class="checkbox-row"><label><input type="checkbox" id="addressDefault" /> 设为默认地址</label></div>
+                      </div>
+                    </div>
+                    <div class="toolbar-row" style="justify-content:flex-end;margin:18px 0 0">
+                      <button class="secondary-btn" type="button" id="cancelAddressFormBtn">取消</button>
+                      <button class="primary-btn" type="button" id="saveAddressBtn">保存</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="merchant-factory-record">
+          <section class="section">
+            <div class="section-head"><span>验厂记录</span></div>
+            <div class="panel sample-table-wrap">
+              <div style="padding:14px">
+                <div class="factory-filter-form">
+                  <label>验厂单号：</label>
+                  <input class="field-input" placeholder="请输入验厂单号" />
+                  <label>生产厂家：</label>
+                  <input class="field-input" placeholder="请输入生产厂家名称" />
+                  <label>验厂状态：</label>
+                  <select class="field-select">
+                    <option>请选择</option>
+                    <option>待审核</option>
+                    <option>无需验厂</option>
+                    <option>延后验厂</option>
+                    <option>验厂通过</option>
+                    <option>验厂不通过</option>
+                    <option>补交资料</option>
+                  </select>
+                  <label>验厂评级：</label>
+                  <select class="field-select">
+                    <option>请选择</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                  </select>
+                  <div class="factory-filter-actions">
+                    <button class="primary-btn" type="button" data-toast="已搜索验厂记录">搜索</button>
+                    <button class="secondary-btn" type="button" data-toast="已重置筛选">重置</button>
+                  </div>
+                </div>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>验厂单号</th>
+                    <th>生产厂家名称</th>
+                    <th>验厂状态</th>
+                    <th>验厂评级</th>
+                    <th>提交时间</th>
+                    <th>审核时间</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>FC202607090018</td>
+                    <td>上海示例食品工厂</td>
+                    <td><span class="sample-dot-status">补交资料</span></td>
+                    <td>-</td>
+                    <td>2026-07-09 11:20</td>
+                    <td>-</td>
+                    <td><button class="text-btn" type="button" data-page-link="merchant" data-panel-target="factoryPanel">查看详情</button> <button class="text-btn" type="button" id="factoryRecordSupplementBtn">补交资料</button></td>
+                  </tr>
+                  <tr>
+                    <td>FC202607080012</td>
+                    <td>上海示例食品工厂</td>
+                    <td><span class="green">验厂通过</span></td>
+                    <td>A</td>
+                    <td>2026-07-08 10:30</td>
+                    <td>2026-07-09 16:30</td>
+                    <td><button class="text-btn" type="button" data-page-link="merchant" data-panel-target="factoryPanel">查看详情</button></td>
+                  </tr>
+                  <tr>
+                    <td>FC202607070009</td>
+                    <td>上海示例食品工厂</td>
+                    <td><span class="orange">延后验厂</span></td>
+                    <td>-</td>
+                    <td>2026-07-07 09:42</td>
+                    <td>2026-07-07 18:10</td>
+                    <td><button class="text-btn" type="button" data-page-link="merchant" data-panel-target="factoryPanel">查看详情</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="toolbar-row" style="padding:10px 14px;border-top:1px solid var(--line-soft);justify-content:flex-end">
+                <span style="color:var(--muted);font-size:12px">共 3 条记录</span>
+                <button class="secondary-btn" type="button">1</button>
+                <select class="field-select" style="width:92px"><option>20 条/页</option><option>50 条/页</option></select>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="merchant-contract">
+          <section class="section">
+            <div class="section-head"><span>合同协议</span></div>
+            <div class="panel sample-table-wrap">
+              <div style="padding:14px">
+                <div class="contract-filter-form">
+                  <label>协议名称：</label>
+                  <input class="field-input" value="签署入驻协议" placeholder="请输入协议名称" />
+                  <label>协议状态：</label>
+                  <select class="field-select">
+                    <option>请选择</option>
+                    <option selected>待签署</option>
+                    <option>已签署</option>
+                  </select>
+                  <div class="contract-filter-actions">
+                    <button class="primary-btn" type="button" data-toast="已搜索合同协议">搜索</button>
+                    <button class="secondary-btn" type="button" data-toast="已重置筛选">重置</button>
+                  </div>
+                </div>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>协议名称</th>
+                    <th>协议版本</th>
+                    <th>签署主体</th>
+                    <th>协议状态</th>
+                    <th>发起时间</th>
+                    <th>协议生效时间</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>签署入驻协议</td>
+                    <td>V2026.07</td>
+                    <td>上海示例科技有限公司</td>
+                    <td><span class="orange">待签署</span></td>
+                    <td>2026-07-09 16:30</td>
+                    <td>-</td>
+                    <td>2026-07-09 16:30</td>
+                    <td><button class="text-btn" type="button" data-page-link="merchant" data-panel-target="contractPanel">去签署</button></td>
+                  </tr>
+                  <tr>
+                    <td>签署入驻协议</td>
+                    <td>V2026.06</td>
+                    <td>上海示例科技有限公司</td>
+                    <td><span class="green">已签署</span></td>
+                    <td>2026-06-18 10:20</td>
+                    <td>2026-06-18 10:45</td>
+                    <td>2026-06-18 10:45</td>
+                    <td><button class="text-btn" type="button" data-toast="已打开协议预览">查看协议</button> <button class="text-btn" type="button" data-toast="协议已开始下载">下载协议</button></td>
+                  </tr>
+                  <tr>
+                    <td>签署入驻协议</td>
+                    <td>V2026.05</td>
+                    <td>上海示例科技有限公司</td>
+                    <td><span class="green">已签署</span></td>
+                    <td>2026-05-12 14:08</td>
+                    <td>2026-05-12 14:30</td>
+                    <td>2026-05-12 14:30</td>
+                    <td><button class="text-btn" type="button" data-toast="已打开协议预览">查看协议</button> <button class="text-btn" type="button" data-toast="协议已开始下载">下载协议</button></td>
+                  </tr>
+                  <tr>
+                    <td>签署入驻协议</td>
+                    <td>V2026.04</td>
+                    <td>上海示例科技有限公司</td>
+                    <td><span class="green">已签署</span></td>
+                    <td>2026-04-20 09:16</td>
+                    <td>2026-04-20 09:40</td>
+                    <td>2026-04-20 09:40</td>
+                    <td><button class="text-btn" type="button" data-toast="已打开协议预览">查看协议</button> <button class="text-btn" type="button" data-toast="协议已开始下载">下载协议</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="toolbar-row" style="padding:10px 14px;border-top:1px solid var(--line-soft);justify-content:flex-end">
+                <span style="color:var(--muted);font-size:12px">共 4 条记录</span>
+                <button class="secondary-btn" type="button">1</button>
+                <select class="field-select" style="width:92px"><option>20 条/页</option><option>50 条/页</option></select>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="module-page" data-page="sample-apply">
+          <div class="form-page-head">
+            <button class="back-btn" type="button" data-page-link="product"><iconify-icon icon="icon-park-outline:left"></iconify-icon></button>
+            <span>试样提报申请</span>
+          </div>
+          <div class="process-stepper">
+            <div class="process-step active" data-sample-stage="apply"><span class="process-index">1</span><span>商品信息</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="audit"><span class="process-index">2</span><span>招商初审</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="ship"><span class="process-index">3</span><span>寄样</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="pricing"><span class="process-index">4</span><span>核价</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="quality"><span class="process-index">5</span><span>品控检验</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="passed"><span class="process-index">6</span><span>上新结果</span></div>
+          </div>
+          <section class="form-section">
+            <div class="form-section-title">商品基础信息</div>
+            <div class="form-body">
+              <div class="form-grid">
+                <div class="form-field two"><label class="required">商品名称</label><textarea class="field-textarea" placeholder="请输入商品名称"></textarea></div>
+                <div class="form-field"><label>商品视频</label><div class="upload-row"><div class="upload-tile">+</div></div></div>
+                <div class="form-field full"><label class="required">商品图片</label><div class="upload-row"><div class="upload-tile">+</div><div class="upload-tile">+</div><div class="upload-tile">+</div></div><p style="color:var(--muted);font-size:12px;margin-top:8px">建议尺寸：800*800 像素，最多上传 6 张</p></div>
+                <div class="form-field full"><label>商品检测报告</label><div class="upload-row"><div class="upload-tile">+</div></div><p style="color:var(--muted);font-size:12px;margin-top:8px">如有检测报告可上传，便于平台审核</p></div>
+                <div class="form-field two"><label class="required">核心卖点</label><textarea class="field-textarea" placeholder="请描述商品核心卖点"></textarea></div>
+                <div class="form-field"><label class="required">品类</label><input class="field-input" placeholder="请输入" /></div>
+                <div class="form-field"><label class="required">品牌</label><input class="field-input" placeholder="请输入" /></div>
+                <div class="form-field"><label>产地</label><input class="field-input" placeholder="请输入" /></div>
+                <div class="form-field full"><label>配料表 / 原料表</label><textarea class="field-textarea" placeholder="请输入配料表或原料表"></textarea></div>
+                <div class="form-field full"><label class="required">主要销售渠道</label><div class="checkbox-row"><label><input type="checkbox" /> 线上</label><label><input type="checkbox" /> 线下</label><label><input type="checkbox" /> 抖音</label><label><input type="checkbox" /> 天猫</label><label><input type="checkbox" /> 淘宝</label></div></div>
+                <div class="form-field full"><label class="required">试样是否寄回</label><div class="radio-row"><label><input type="radio" name="sampleReturn" /> 寄回</label><label><input type="radio" name="sampleReturn" checked /> 不寄回</label></div></div>
+              </div>
+            </div>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title">商品规格</div>
+            <div class="form-body">
+              <div class="form-grid">
+                <div class="form-field full"><label class="required">规格主图</label><div class="upload-row"><div class="upload-tile">+</div></div></div>
+                <div class="form-field"><label class="required">规格名称</label><input class="field-input" placeholder="例如：颜色、尺码、口味、重量等" /></div>
+                <div class="form-field"><label class="required">规格详情</label><input class="field-input" placeholder="例如：红色、小码、原味" /></div>
+                <div class="form-field"><label class="required">单品去年销售额</label><input class="field-input" placeholder="重要合作信息，请如实填写" /></div>
+                <div class="form-field"><label class="required">单品上月销售额</label><input class="field-input" placeholder="重要合作信息，请如实填写" /></div>
+                <div class="form-field"><label class="required">公域售价</label><input class="field-input" placeholder="元" /></div>
+                <div class="form-field"><label class="required">大促最低到手价</label><input class="field-input" placeholder="元" /></div>
+                <div class="form-field"><label class="required">建议运营售价</label><input class="field-input" placeholder="元" /></div>
+                <div class="form-field"><label class="required">近万供货价</label><input class="field-input" placeholder="元" /></div>
+                <div class="form-field"><label class="required">除亲至源选外最低供货价</label><input class="field-input" placeholder="元" /></div>
+                <div class="form-field"><label class="required">商品成本</label><input class="field-input" placeholder="元" /></div>
+              </div>
+            </div>
+          </section>
+          <div class="form-footer">
+            <button class="danger-btn" type="button" data-page-link="product">取消</button>
+            <button class="secondary-btn" type="button" data-toast="草稿已保存">保存草稿</button>
+            <button class="primary-btn" type="button" id="submitSampleApplyBtn">提交招商初审</button>
+          </div>
+        </div>
+
+        <div class="module-page" data-page="sample-platform">
+          <div class="form-page-head">
+            <button class="back-btn" type="button" data-page-link="product"><iconify-icon icon="icon-park-outline:left"></iconify-icon></button>
+            <span>商品详情</span>
+          </div>
+          <div class="process-stepper">
+            <div class="process-step done" data-sample-stage="apply"><span class="process-index">1</span><span>商品信息</span></div>
+            <div class="process-line done"></div>
+            <div class="process-step active" data-sample-stage="audit"><span class="process-index">2</span><span>招商初审</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="ship"><span class="process-index">3</span><span>寄样</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="pricing"><span class="process-index">4</span><span>核价</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="quality"><span class="process-index">5</span><span>品控检验</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="passed"><span class="process-index">6</span><span>上新结果</span></div>
+          </div>
+          <section class="form-section">
+            <div class="form-section-title">商品基础信息</div>
+            <div class="readonly-grid">
+              <div class="readonly-field wide"><label class="required">商品名称</label><strong>黛莱美测试商品【无须审核】</strong></div>
+              <div class="readonly-field wide">
+                <label class="required">商品图片</label>
+                <div class="readonly-photo-row">
+                  <div class="readonly-photo">商品图</div>
+                </div>
+              </div>
+              <div class="readonly-field"><label class="required">核心卖点</label><strong>护肤面膜</strong></div>
+              <div class="readonly-field"><label class="required">品类</label><strong>护肤品</strong></div>
+              <div class="readonly-field"><label class="required">品牌</label><strong>黛莱美</strong></div>
+              <div class="readonly-field"><label>产地</label><strong>-</strong></div>
+              <div class="readonly-field wide"><label>配料表 / 原料表</label><strong>-</strong></div>
+              <div class="readonly-field"><label>主要销售渠道</label><strong>线上</strong></div>
+              <div class="readonly-field"><label>试样是否寄回</label><strong>不寄回</strong></div>
+            </div>
+            <div class="platform-note">平台正在审核商品资料、价格信息和合作匹配度。预计 1-2 个工作日内完成处理。</div>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title">商品规格</div>
+            <div class="readonly-grid">
+              <div class="readonly-field wide">
+                <label class="required">规格主图</label>
+                <div class="readonly-photo-row">
+                  <div class="readonly-photo">规格图</div>
+                </div>
+              </div>
+              <div class="readonly-field"><label class="required">规格名称</label><strong>容量</strong></div>
+              <div class="readonly-field"><label class="required">规格详情</label><strong>300ml</strong></div>
+              <div class="readonly-field"><label class="required">单品去年销售额</label><strong>10万元</strong></div>
+              <div class="readonly-field"><label class="required">单品上月销售额</label><strong>10万元</strong></div>
+              <div class="readonly-field"><label class="required">公域售价</label><strong>199元</strong></div>
+              <div class="readonly-field"><label class="required">大促最低到手价</label><strong>189元</strong></div>
+              <div class="readonly-field"><label class="required">建议运营售价</label><strong>189元</strong></div>
+              <div class="readonly-field"><label class="required">近万供货价</label><strong>89元</strong></div>
+              <div class="readonly-field"><label class="required">除亲至源选外最低供货价</label><strong>89元</strong></div>
+              <div class="readonly-field"><label class="required">商品成本</label><strong>69元</strong></div>
+            </div>
+          </section>
+          <div class="form-footer">
+            <button class="danger-btn" type="button" id="revokeSampleAuditBtn">撤回提报样品</button>
+            <button class="secondary-btn" type="button" data-page-link="product">返回列表</button>
+          </div>
+        </div>
+
+        <div class="module-page" data-page="sample-stage">
+          <div class="form-page-head">
+            <button class="back-btn" type="button" data-page-link="product"><iconify-icon icon="icon-park-outline:left"></iconify-icon></button>
+            <span id="sampleStagePageTitle">商品详情</span>
+          </div>
+          <div class="process-stepper" id="sampleStageStepper">
+            <div class="process-step" data-sample-stage="apply"><span class="process-index">1</span><span>商品信息</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="audit"><span class="process-index">2</span><span>招商初审</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="ship"><span class="process-index">3</span><span>寄样</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="pricing"><span class="process-index">4</span><span>核价</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="quality"><span class="process-index">5</span><span>品控检验</span></div>
+            <div class="process-line"></div>
+            <div class="process-step" data-sample-stage="passed"><span class="process-index">6</span><span>上新结果</span></div>
+          </div>
+          <div class="stage-summary">
+            <div class="stage-card"><label>当前状态</label><strong id="sampleStageStatus">待寄样</strong></div>
+            <div class="stage-card"><label>处理人</label><strong id="sampleStageOwner">供应商</strong></div>
+            <div class="stage-card"><label>更新时间</label><strong id="sampleStageTime">2026-07-06 11:30:00</strong></div>
+            <div class="stage-card"><label>下一步</label><strong id="sampleStageNext">填写物流信息</strong></div>
+          </div>
+          <section class="form-section">
+            <div class="form-section-title" id="sampleStageSectionTitle">待寄样处理</div>
+            <div id="sampleStageBody"></div>
+          </section>
+          <section class="form-section">
+            <div class="form-section-title">商品基础信息</div>
+            <div class="readonly-grid">
+              <div class="readonly-field wide"><label class="required">商品名称</label><strong>黛莱美测试商品【无须审核】</strong></div>
+              <div class="readonly-field"><label class="required">商品图片</label><div class="readonly-photo-row"><div class="readonly-photo">商品图</div></div></div>
+              <div class="readonly-field"><label class="required">核心卖点</label><strong>护肤面膜</strong></div>
+              <div class="readonly-field"><label class="required">品类</label><strong>护肤品</strong></div>
+              <div class="readonly-field"><label class="required">品牌</label><strong>黛莱美</strong></div>
+              <div class="readonly-field"><label>主要销售渠道</label><strong>线上</strong></div>
+              <div class="readonly-field"><label>试样是否寄回</label><strong id="sampleStageReturnBack">不寄回</strong></div>
+              <div class="readonly-field wide" id="sampleStageReturnInfo" style="display:none"></div>
+            </div>
+          </section>
+          <div class="form-footer" id="sampleStageFooter"></div>
+        </div>
+
+        <div class="module-page" data-page="sample-detail">
+          <section class="section">
+            <div class="section-head"><span>试样商品详情</span></div>
+            <div class="node-detail">
+              <div class="node-detail-head">
+                <div class="node-detail-title"><span class="node-number">2</span><span id="sampleDetailTitle">试样提报详情</span></div>
+                <div class="node-meta">当前状态：<strong id="sampleDetailStatus" class="orange">待提交</strong></div>
+                <div class="node-meta">更新时间：<strong id="sampleDetailTime">2026-07-02 11:10</strong></div>
+                <div class="node-meta">处理人：<strong id="sampleDetailOwner">供应商</strong></div>
+              </div>
+              <div class="node-body">
+                <div class="status-actions" style="margin-top:0;margin-bottom:14px">
+                  <button type="button" data-page-link="merchant">返回进驻状态</button>
+                </div>
+                <div class="sample-grid">
+                  <div class="sample-box"><label>商品信息</label><strong>低温鲜果杯</strong><p style="color:var(--muted);font-size:12px;line-height:20px;margin-top:8px">规格：180g*6<br />供货价：¥29.90<br />建议零售价：¥49.90</p></div>
+                  <div class="sample-box"><label>试样节点说明</label><strong id="sampleDetailDesc">填写试样资料并提交平台审核。</strong></div>
+                  <div class="sample-box"><label>下一步动作</label><strong id="sampleDetailNext">提交试样申请</strong></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-mask show" id="shopOpenSuccessModal">
+    <div class="modal-card shop-open-success-modal">
+      <div class="modal-head"><span>店铺开通成功</span><button class="drawer-close" type="button" data-close-modal="shopOpenSuccessModal">×</button></div>
+      <div class="shop-open-success-body">
+        <div class="shop-success-logo">✓</div>
+        <h2>店铺开通成功</h2>
+        <p>欢迎进入亲至源选供应商管理系统。您的店铺距离开通还差最后一步，完成后即可开始经营。</p>
+        <button class="primary-btn" type="button" data-wechat-onboarding>微信支付进件</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="sampleAddressModal">
+    <div class="modal-card">
+      <div class="modal-head"><span>提示</span><button class="drawer-close" type="button" data-close-modal="sampleAddressModal">×</button></div>
+      <div class="modal-body">请先完善试样退货地址后，再进行试样提报。</div>
+      <div class="modal-actions">
+        <button class="secondary-btn" type="button" data-close-modal="sampleAddressModal">取消</button>
+        <button class="primary-btn" type="button" id="goSampleAddressBtn">去完善</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="deleteAddressModal">
+    <div class="modal-card">
+      <div class="modal-head"><span>删除确认</span><button class="drawer-close" type="button" data-close-modal="deleteAddressModal">×</button></div>
+      <div class="modal-body">是否确认删除该地址？删除后不可恢复。</div>
+      <div class="modal-actions">
+        <button class="secondary-btn" type="button" data-close-modal="deleteAddressModal">取消</button>
+        <button class="danger-btn" type="button" id="confirmDeleteAddressBtn">确认删除</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="logisticsModal">
+    <div class="modal-card" style="width:560px">
+      <div class="modal-head"><span>提交物流信息</span><button class="drawer-close" type="button" data-close-modal="logisticsModal">×</button></div>
+      <div class="modal-body">
+        <div class="form-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px">
+          <div class="form-field"><label class="required">快递公司</label><input class="field-input" id="logisticsCompany" placeholder="请输入快递公司" /></div>
+          <div class="form-field"><label class="required">快递单号</label><input class="field-input" id="logisticsNo" placeholder="请输入快递单号" /></div>
+          <div class="form-field"><label class="required">发货人</label><input class="field-input" id="senderName" placeholder="请输入发货人" /></div>
+          <div class="form-field"><label class="required">发货人手机号码</label><input class="field-input" id="senderPhone" placeholder="请输入发货人手机号码" /></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="secondary-btn" type="button" data-close-modal="logisticsModal">取消</button>
+        <button class="primary-btn" type="button" id="confirmLogisticsBtn">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="factoryApplyModal">
+    <div class="modal-card" style="width:640px">
+      <div class="modal-head"><span>提交验厂申请</span><button class="drawer-close" type="button" data-close-modal="factoryApplyModal">×</button></div>
+      <div class="modal-body">
+        <div class="modal-form-grid">
+          <div class="form-field full"><label class="required">工厂地址</label><input class="field-input" value="上海市浦东新区示例产业园 3 号楼" placeholder="请输入工厂详细地址" /></div>
+          <div class="form-field"><label class="required">验厂联系人</label><input class="field-input" value="李四" placeholder="请输入联系人姓名" /></div>
+          <div class="form-field"><label class="required">验厂联系人手机号</label><input class="field-input" value="13988886118" placeholder="请输入联系人手机号" /></div>
+          <div class="form-field"><label class="required">配合时间</label><select class="field-select"><option>工作日 上午</option><option>工作日 下午</option><option selected>工作日 全天</option></select></div>
+          <div class="form-field full"><label class="required">产线信息</label><textarea class="field-textarea" placeholder="示例：低温鲜果杯自动灌装线 2 条，日产能约 30,000 份，配置冷链仓、生产车间和质检间。">低温鲜果杯自动灌装线 2 条，日产能约 30,000 份，配置冷链仓、生产车间和质检间。</textarea></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="secondary-btn" type="button" data-close-modal="factoryApplyModal">取消</button>
+        <button class="primary-btn" type="button" id="confirmFactoryApply">确认提交</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="factorySupplementModal">
+    <div class="modal-card" style="width:640px">
+      <div class="modal-head"><span>提交验厂资料</span><button class="drawer-close" type="button" data-close-modal="factorySupplementModal">×</button></div>
+      <div class="modal-body">
+        <div class="modal-form-grid">
+          <div class="form-field full"><label class="required">补交说明</label><textarea class="field-textarea" placeholder="请说明本次补交资料用途，例如补充产线视频、资质证明或整改说明。">补充产线操作视频、冷链仓照片和整改说明，供平台复核。</textarea></div>
+          <div class="form-field full"><label class="required">上传资料</label><div class="upload-row"><div class="upload-tile">PDF</div><div class="upload-tile">图片</div><div class="upload-tile">视频</div></div><p style="color:var(--muted);font-size:12px;margin-top:8px">支持 PDF、JPG、PNG、MP4 等格式，可上传多份。</p></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="secondary-btn" type="button" data-close-modal="factorySupplementModal">取消</button>
+        <button class="primary-btn" type="button" id="confirmFactorySupplement">提交验厂资料</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="factoryPaymentModal">
+    <div class="modal-card" style="width:520px">
+      <div class="modal-head"><span>上传验厂费用打款凭证</span><button class="drawer-close" type="button" data-close-modal="factoryPaymentModal">×</button></div>
+      <div class="modal-body">
+        <div class="modal-form-grid">
+          <div class="form-field"><label>指定验厂机构</label><input class="field-input" value="华测专业验厂机构" readonly /></div>
+          <div class="form-field"><label>付款方式</label><input class="field-input" value="按机构指定账户线下转账" readonly /></div>
+          <div class="form-field"><label class="required">付款主体</label><input class="field-input" value="上海示例科技有限公司" /></div>
+          <div class="form-field"><label>付款流水号</label><input class="field-input" placeholder="请输入银行流水号" /></div>
+          <div class="form-field full"><label class="required">打款凭证</label><div class="upload-row"><div class="upload-tile">+</div></div><p style="color:var(--muted);font-size:12px;margin-top:8px">请上传真实、清晰且可核验的银行转账凭证。</p></div>
+          <div class="form-field full"><label>付款备注</label><textarea class="field-textarea" placeholder="请输入付款流水号或备注信息"></textarea></div>
+        </div>
+        <div class="factory-tip" style="margin-top:12px">请严格按照平台指定验厂机构提供的账户及打款方式完成付款，切勿向其他账户转账。</div>
+        <p style="color:var(--danger);font-size:12px;line-height:20px;margin-top:10px">重要提示：本次费用为一次性验厂服务费用，缴纳后不予退还。请确认付款信息无误后再上传凭证。</p>
+      </div>
+      <div class="modal-actions">
+        <button class="secondary-btn" type="button" data-close-modal="factoryPaymentModal">取消</button>
+        <button class="primary-btn" type="button" id="confirmFactoryPayment">提交打款凭证</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="depositVoucherModal">
+    <div class="modal-card deposit-modal-card">
+      <div class="modal-head"><span>缴纳金额</span><button class="drawer-close" type="button" data-close-modal="depositVoucherModal">×</button></div>
+      <div class="modal-body">
+        <div class="deposit-modal-section">
+          <h3>基础信息</h3>
+          <div class="deposit-info-grid">
+            <label>供应商名称：</label><strong>广州河葵德商贸有限公司</strong>
+            <label>状态：</label><strong id="depositModalStatus">待缴纳</strong>
+            <label>支付方式：</label><strong>银行转账支付</strong>
+            <label><span class="required">*</span> 业务类型：</label>
+            <select class="form-select" id="depositBusinessType">
+              <option>合作保证金补缴</option>
+              <option>余额不足补缴</option>
+              <option>其他业务补缴</option>
+            </select>
+            <label><span class="required">*</span> 待缴金额：</label><input class="form-input" id="depositDueAmount" value="¥317.93" />
+          </div>
+        </div>
+        <div class="deposit-modal-section">
+          <h3>收款信息</h3>
+          <div class="deposit-info-grid">
+            <label>收款人：</label><strong>广州蜂群互联网科技有限公司</strong>
+            <label>收款账号：</label><strong>1595 5804 2800 87</strong>
+            <label>收款开户行：</label><strong>平安银行广州越秀支行</strong>
+            <label>汇款用途：</label><strong>保证金</strong>
+            <label>说明：</label><strong>请按照上述收款信息进行线下银行转账打款，打款完成后上传转账凭证。相关条款详见《合同》条款。</strong>
+            <label><span class="required">*</span> 已缴金额：</label><input class="form-input" id="depositPaidAmount" placeholder="请输入缴纳金额，须与上传凭证金额一致" />
+            <label><span class="required">*</span> 转账凭证：</label>
+            <div class="voucher-upload-row">
+              <div class="upload-tile">+</div>
+              <span class="deposit-upload-tips">凭证范例，点击放大查看</span>
+              <div class="voucher-example">转账凭证范例</div>
+              <div class="deposit-upload-tips">
+                传图提示：上传银行的转账凭证，方便对账。<br />
+                最多支持5张，支持jpg和png格式，单张图片大小不要超过2M。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="secondary-btn" type="button" data-close-modal="depositVoucherModal">取消</button>
+        <button class="primary-btn" type="button" id="confirmDepositVoucher">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head">
+      <div><h2 id="drawerTitle">事项详情</h2><p style="color:var(--muted);font-size:12px;margin-top:4px">这里用于承接列表行点击后的详情查看。</p></div>
+      <button class="drawer-close" type="button" id="drawerClose">×</button>
+    </div>
+    <div class="detail"><label>处理状态</label><strong>待跟进</strong></div>
+    <div class="detail"><label>责任中心</label><strong id="drawerModule">亲至源选供应商管理系统</strong></div>
+    <div class="detail"><label>下一步动作</label><strong>补充资料后提交平台审核</strong></div>
+  </aside>
+  <div class="drawer-mask" id="commentDrawerMask"></div>
+  <aside class="drawer comment-drawer" id="commentDrawer">
+    <div class="drawer-head">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="drawer-close" type="button" id="commentDrawerClose">×</button>
+        <h2>试样反馈</h2>
+      </div>
+    </div>
+    <div class="comment-body">
+      <div class="comment-item-head">
+        <div class="comment-user">
+          <span class="avatar"><iconify-icon icon="icon-park-outline:user"></iconify-icon></span>
+          <div>
+            <strong>广州词奕德商贸有限公司 <span>（来源：OMS）</span></strong>
+            <div id="productCommentProductName">黛莱美测试商品</div>
+            <span>2026-07-06 11:13:50</span>
+          </div>
+        </div>
+        <div class="comment-actions">
+          <button type="button" data-toast="已进入回复">回复</button>
+          <button type="button" data-toast="评论已删除">删除</button>
+        </div>
+      </div>
+      <div class="comment-form">
+        <label>添加评论</label>
+        <textarea class="comment-textarea" id="productCommentInput" maxlength="100" placeholder="请输入评论"></textarea>
+        <div class="comment-counter"><span id="productCommentCount">0</span> / 100</div>
+        <div class="comment-submit">
+          <button class="primary-btn" type="button" id="submitProductCommentBtn">确定</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="toast" id="toast"></div>
+
+  
+  <script src="./app.js"></script>
+</body>
+</html>
