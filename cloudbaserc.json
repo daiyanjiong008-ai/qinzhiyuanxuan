@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "envId": "elemr-9527000-d2ge5x0eh7ced8184",
+  "framework": {
+    "name": "qinzhi-oms-admin",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "outputPath": "./",
+          "cloudPath": "/",
+          "buildCommand": ""
+        }
+      }
+    }
+  }
+}
